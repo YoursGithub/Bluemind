@@ -159,7 +159,7 @@ Route::view('/about','static.about') ;
 Route::view('/contact','static.contact') ;
 Route::view('/investment','static.investment') ;
 Route::view('/roadmap','static.roadmap') ;
-Route::view('/referrals','static.referral') ;
+Route::view('/promoters','static.referral') ;
 Route::view('/gallery','static.gallery') ;
 Route::view('/galleryview','static.galleryView') ;
 
