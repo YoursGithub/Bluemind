@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Admin\AdminInvestmentController;
 use App\Http\Controllers\Admin\AdminUserController;
+use App\Http\Controllers\Admin\MiscPageController;
 use App\Http\Controllers\ForgetPasswordController;
 use App\Http\Controllers\User\EmailVerificationController;
 use App\Http\Controllers\User\UserAuthController;
@@ -26,16 +27,6 @@ use Illuminate\Support\Str;
 |
 */
 
-// Route::get('/user', fn() => User::create(
-//     [
-//         'name' => 'admin',
-//         'email' => 'admin@gmail.com',
-//         'is_admin' => true,
-//         'password' => bcrypt("1234")
-//     ]
-// ));
-
-Route::view('/test','test');
 
 //user verify mail
 Route::get('/email/verify/{id}/{hash}/{custom_token}', [EmailVerificationController::class, 'verify'])
@@ -66,6 +57,14 @@ Route::prefix('admin')->as('admin.')->middleware(['isLoggedIn'])->controller(Adm
 
 
 Route::prefix('admin')->as('admin.')->middleware('isAdmin')->group(function () {
+
+    Route::controller(MiscPageController::class)->group(function () {
+    Route::get('/home-settings', 'homeSettingsView')->name('home-settings');
+    Route::post('/home-settings', 'homeSettingsStore')->name('home-settings');
+
+
+    
+    });
 
 
 

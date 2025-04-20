@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('home_pages', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('happy_clients');
+            $table->bigInteger('successful_projects');
             $table->timestamps();
         });
     }

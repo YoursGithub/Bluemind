@@ -1173,7 +1173,10 @@
                                     <div class="col-lg-3 col-md-6 mt-30">
                                         <div class="xb-feature-inner">
                                             <div class="xb-feature-item">
-                                                <h2 class="title"><span class="xbo" data-count="35">00</span><span
+                                                <h2 class="title"><span class="xbo" 
+                                                    data-count="{{ $globalData->home->happy_clients ?? 0 }}"
+
+                                                    >00</span><span
                                                         class="suffix">+</span></h2>
                                                 <span class="sub-title">Happy Clients</span>
                                             </div>
@@ -1192,7 +1195,10 @@
                                     <div class="col-lg-3 col-md-6 mt-30">
                                         <div class="xb-feature-inner">
                                             <div class="xb-feature-item">
-                                                <h2 class="title"><span class="xbo" data-count="87">00</span><span
+                                                <h2 class="title"><span class="xbo" 
+                                                    data-count="{{ $globalData->home->successful_projects ?? 0 }}"
+
+                                                    >00</span><span
                                                         class="suffix">+</span></h2>
                                                 <span class="sub-title">Sucessful Project</span>
                                             </div>

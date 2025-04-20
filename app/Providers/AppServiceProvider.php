@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
+use App\Helpers\GlobalData;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,13 +25,6 @@ class AppServiceProvider extends ServiceProvider
     {
         //
 
-        // User::create([
-        //     'name' => 'admin',
-        //     'email'=> 'admin@gmail.com',
-        //     'phone'=> '123',
-        //     'password'=> Hash::make('1234'),
-        //     'email_verified_at' => now() ,
-        //     'is_admin' =>true
-        // ]) ;
+        View::share('globalData',GlobalData::getData());
     }
 }

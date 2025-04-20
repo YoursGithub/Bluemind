@@ -193,7 +193,7 @@
                                 </li>
 
                                 <li>
-                                    <a href="/account-settings">
+                                    <a href="{{ route('admin.home-settings')}} ">
                                         <i class="bx bx-home-circle"></i>
                                         <span key="t-dashboards">Home Page Settings</span>
                                     </a>
