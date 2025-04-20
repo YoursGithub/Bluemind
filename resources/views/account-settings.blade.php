@@ -6,23 +6,8 @@
     <div class="page-content">
         <div class="container-fluid">
 
-            <!-- start page title -->
-           
-            <!-- end page title -->
-            @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-                </ul>
-            </div>
-        @endif
-            @if (session('success'))
-            <div class="alert alert-success">
-                {{ session('success') }}
-            </div>
-             @endif
+
+            
 
             <div class="row">
                 <div class="col-12">

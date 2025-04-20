@@ -8,7 +8,7 @@
 
     <div class="page-content">
         <div class="container-fluid">
-            {{-- @dump($kycDetails) --}}
+
             @isset($kycDetails)
                 
                 <div class="row">

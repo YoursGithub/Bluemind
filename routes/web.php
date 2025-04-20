@@ -9,6 +9,7 @@ use App\Http\Controllers\User\UserAuthController;
 use App\Http\Controllers\User\UserKycController;
 use App\Http\Controllers\User\UserPageController;
 use App\Models\ReferralCode;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
@@ -25,6 +26,16 @@ use Illuminate\Support\Str;
 |
 */
 
+// Route::get('/user', fn() => User::create(
+//     [
+//         'name' => 'admin',
+//         'email' => 'admin@gmail.com',
+//         'is_admin' => true,
+//         'password' => bcrypt("1234")
+//     ]
+// ));
+
+Route::view('/test','test');
 
 //user verify mail
 Route::get('/email/verify/{id}/{hash}/{custom_token}', [EmailVerificationController::class, 'verify'])
@@ -32,7 +43,7 @@ Route::get('/email/verify/{id}/{hash}/{custom_token}', [EmailVerificationControl
     ->middleware(['signed']);
 
 
-Route::get('/logout',[UserAuthController::class, 'logout'])->name('logout') ;
+Route::get('/logout', [UserAuthController::class, 'logout'])->name('logout');
 
 
 //forget password
@@ -51,12 +62,11 @@ Route::prefix('admin')->as('admin.')->middleware(['isLoggedIn'])->controller(Adm
 
     Route::get('/login', 'loginView')->name('login');
     Route::post('/login', 'login')->name('login');
-
 });
 
 
 Route::prefix('admin')->as('admin.')->middleware('isAdmin')->group(function () {
-    
+
 
 
     Route::controller(AdminUserController::class)->group(function () {
@@ -108,8 +118,6 @@ Route::prefix('admin')->as('admin.')->middleware('isAdmin')->group(function () {
         Route::get('/update-transaction/{transac}', 'updateTransactionView')->name('update-transaction');
         Route::post('/update-transaction/{transac}', 'updateTransaction')->name('update-transaction');
     });
-
-
 });
 
 //user routes
@@ -141,9 +149,6 @@ Route::as('user.')->middleware(['auth', 'isVerified'])->group(function () {
         Route::get('/dashboard', 'dashboard')->name('dashboard');
 
         Route::get('/qwe', 'shareReferralView')->name('shareReferral');
-
-
-
     });
 });
 
@@ -154,12 +159,11 @@ Route::middleware(['auth'])->group(function () {
 
 
 //static files
-Route::view('/','static.index') ;
-Route::view('/about','static.about') ;
-Route::view('/contact','static.contact') ;
-Route::view('/investment','static.investment') ;
-Route::view('/roadmap','static.roadmap') ;
-Route::view('/promoters','static.referral') ;
-Route::view('/gallery','static.gallery') ;
-Route::view('/galleryview','static.galleryView') ;
-
+Route::view('/', 'static.index');
+Route::view('/about', 'static.about');
+Route::view('/contact', 'static.contact');
+Route::view('/investment', 'static.investment');
+Route::view('/roadmap', 'static.roadmap');
+Route::view('/promoters', 'static.referral');
+Route::view('/gallery', 'static.gallery');
+Route::view('/galleryview', 'static.galleryView');

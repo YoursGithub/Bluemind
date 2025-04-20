@@ -26,10 +26,45 @@
 
     @yield('head-section')
 
+    <style>
+        .toast-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+        }
+        .custom-toast {
+            padding: 12px;
+            margin-bottom: 10px;
+            min-width: 250px;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            opacity: 0;
+            transform: translateX(100%);
+            animation: fadeIn 0.3s ease forwards;
+        }
+        .custom-toast.success { background-color: #4CAF50; }
+        .custom-toast.error { background-color: #f44336; }
+    
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateX(100%); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes fadeOut {
+            from { opacity: 1; transform: translateX(0); }
+            to { opacity: 0; transform: translateX(100%); }
+        }
+    </style>
+
 
 </head>
 
 <body data-sidebar="dark">
+
+    <div class="toast-container" id="toastContainer"></div>
+
+    {{-- @dump(session()->all()) --}}
 
     <!-- <body data-layout="horizontal" data-topbar="dark"> -->
 
@@ -66,26 +101,26 @@
                     </button>
 
                     <!-- App Search-->
-                   
+
 
 
                 </div>
 
                 <div class="d-flex">
 
-                    
-                
+
+
 
                     <div class="dropdown d-inline-block">
                         <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                
+
                             <span class="d-none d-xl-inline-block ms-1" key="t-henry">{{ Auth::user()->email }}</span>
                             <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-end">
                             <!-- item-->
-                      
+
                             <div class="dropdown-divider"></div>
                             <a href="{{ route('logout') }}" class="dropdown-item text-danger" href="#"><i
                                     class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span
@@ -93,7 +128,7 @@
                         </div>
                     </div>
 
-                    
+
 
                 </div>
             </div>
@@ -149,13 +184,21 @@
                                     </a>
                                     <ul class="sub-menu" aria-expanded="false">
                                         <li><a href="{{ route('admin.all-investments') }}">
-                                          Manage Capital
-                                        </a></li>
+                                                Manage Capital
+                                            </a></li>
                                         <li><a href="{{ route('admin.all-transactions') }}">
-                                            Manage Transactions</a></li>
+                                                Manage Transactions</a></li>
                                     </ul>
-                                    
+
                                 </li>
+
+                                <li>
+                                    <a href="/account-settings">
+                                        <i class="bx bx-home-circle"></i>
+                                        <span key="t-dashboards">Home Page Settings</span>
+                                    </a>
+                                </li>
+    
 
 
                             @else
@@ -167,20 +210,18 @@
                                     </a>
                                 </li>
 
-                                @if(!Auth::user()->bankDetails?->is_kyc_verified)
-
-                                <li>
-                                    <a href="{{ route('user.kyc') }}">
-                                        <i class="bx bx-home-circle"></i>
-                                        <span key="t-dashboards">KYC</span>
-                                    </a>
-                                </li>
-
+                                @if (!Auth::user()->bankDetails?->is_kyc_verified)
+                                    <li>
+                                        <a href="{{ route('user.kyc') }}">
+                                            <i class="bx bx-home-circle"></i>
+                                            <span key="t-dashboards">KYC</span>
+                                        </a>
+                                    </li>
                                 @endif
 
-                                
 
-                              
+
+
                                 <li>
                                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                                         <i class="bx bx-user-circle"></i>
@@ -188,12 +229,12 @@
                                     </a>
                                     <ul class="sub-menu" aria-expanded="false">
                                         <li>
-                                    <a href="{{ route('user.investments') }}">
+                                            <a href="{{ route('user.investments') }}">
                                                 Investment Portfolio
                                             </a>
                                         </li>
                                         <li>
-                                    <a href="{{ route('user.refInvestments') }}">
+                                            <a href="{{ route('user.refInvestments') }}">
                                                 Referral Portfolio
                                             </a>
                                         </li>
@@ -207,18 +248,17 @@
                                     </a>
                                 </li>
 
-                                
-                               
                             @endif
 
 
                             <li>
-                                    <a href="/account-settings">
-                                        <i class="bx bx-home-circle"></i>
-                                        <span key="t-dashboards">Account Settings</span>
-                                    </a>
+                                <a href="/account-settings">
+                                    <i class="bx bx-home-circle"></i>
+                                    <span key="t-dashboards">Account Settings</span>
+                                </a>
                             </li>
 
+                           
 
 
 
@@ -250,48 +290,7 @@
     </div>
     <!-- END layout-wrapper -->
 
-    <!-- Right Sidebar -->
-    <div class="right-bar">
-        <div data-simplebar class="h-100">
-            <div class="rightbar-title d-flex align-items-center px-3 py-4">
 
-                <h5 class="m-0 me-2">Settings</h5>
-
-                <a href="javascript:void(0);" class="right-bar-toggle ms-auto">
-                    <i class="mdi mdi-close noti-icon"></i>
-                </a>
-            </div>
-
-            <!-- Settings -->
-            <hr class="mt-0" />
-            <h6 class="text-center mb-0">Choose Layouts</h6>
-
-            <div class="p-4">
-                <div class="mb-2">
-                    <img src="/assets/images/layouts/layout-1.jpg" class="img-thumbnail" alt="layout images">
-                </div>
-
-                <div class="form-check form-switch mb-3">
-                    <input class="form-check-input theme-choice" type="checkbox" id="light-mode-switch" checked>
-                    <label class="form-check-label" for="light-mode-switch">Light Mode</label>
-                </div>
-
-                <div class="mb-2">
-                    <img src="/assets/images/layouts/layout-2.jpg" class="img-thumbnail" alt="layout images">
-                </div>
-                <div class="form-check form-switch mb-3">
-                    <input class="form-check-input theme-choice" type="checkbox" id="dark-mode-switch">
-                    <label class="form-check-label" for="dark-mode-switch">Dark Mode</label>
-                </div>
-
-
-
-
-            </div>
-
-        </div> <!-- end slimscroll-menu-->
-    </div>
-    <!-- /Right-bar -->
 
 
 
@@ -307,6 +306,41 @@
     <script src="/assets/js/app.js"></script>
 
     @yield('script-section')
+
+    <script>
+        window.onload = function () {
+            @if(session('success'))
+            
+                showToast('success', "{{ session('success') }}");
+            @endif
+    
+
+            @if ($errors->any())
+                @foreach ($errors->all() as $error)
+                    showToast('error', "{{ $error }}");
+                @endforeach
+            @endif
+
+        };
+        
+        function showToast(type, message) {
+
+            const toastContainer = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            toast.classList.add('custom-toast', type);
+            toast.innerText = message;
+            toast.style.marginBottom="10px";
+            toast.style.fontSize="12px";
+
+            toastContainer.appendChild(toast);
+
+            setTimeout(() => {
+                toast.style.animation = "fadeOut 0.3s ease forwards";
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+    </script>
 
 </body>
 
