@@ -80,7 +80,7 @@
             <span style="color: white; font-size: 20px;">✕</span>
         </div>
         
-        <img src="/assets/images/crypto/blog/img-1.jpg" alt="Promotion" style="width: 100%; height: auto; display: block; border-radius: 8px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);">
+        <img src="{{ $globalData->home?->image }}" alt="Promotion" style="width: 100%; height: auto; display: block; border-radius: 8px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);">
     </div>
 
 

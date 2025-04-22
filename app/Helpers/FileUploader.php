@@ -1,0 +1,23 @@
+<?php
+
+namespace App\Helpers;
+
+
+use Illuminate\Support\Str;
+use Illuminate\Http\UploadedFile;
+
+
+class FileUploader
+{
+    /**
+     * @param UploadedFile $file The uploaded file instance.
+     * @return string The file path if successful.
+     */
+    public static function imageUpload(UploadedFile $file ,  string $path = 'images')
+    {
+        $fileName = Str::uuid() . "-" . $file->getClientOriginalName();
+        $file->move(public_path($path), $fileName);
+
+        return "/$path/" . $fileName;
+    }
+}

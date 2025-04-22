@@ -59,11 +59,10 @@ Route::prefix('admin')->as('admin.')->middleware(['isLoggedIn'])->controller(Adm
 Route::prefix('admin')->as('admin.')->middleware('isAdmin')->group(function () {
 
     Route::controller(MiscPageController::class)->group(function () {
-    Route::get('/home-settings', 'homeSettingsView')->name('home-settings');
-    Route::post('/home-settings', 'homeSettingsStore')->name('home-settings');
 
+        Route::get('/home-settings', 'homeSettingsView')->name('home-settings');
+        Route::post('/home-settings', 'homeSettingsStore')->name('home-settings');
 
-    
     });
 
 
@@ -97,7 +96,7 @@ Route::prefix('admin')->as('admin.')->middleware('isAdmin')->group(function () {
 
     Route::controller(AdminInvestmentController::class)->group(function () {
 
-        Route::get('/', 'dashboard')->name('dashboard');
+        Route::get('/dash', 'dashboard')->name('dashboard');
 
 
         Route::get('/all-investments', 'allInvestmentsView')->name('all-investments');

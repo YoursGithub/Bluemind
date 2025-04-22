@@ -33,6 +33,7 @@
             right: 20px;
             z-index: 9999;
         }
+
         .custom-toast {
             padding: 12px;
             margin-bottom: 10px;
@@ -44,16 +45,37 @@
             transform: translateX(100%);
             animation: fadeIn 0.3s ease forwards;
         }
-        .custom-toast.success { background-color: #4CAF50; }
-        .custom-toast.error { background-color: #f44336; }
-    
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateX(100%); }
-            to { opacity: 1; transform: translateX(0); }
+
+        .custom-toast.success {
+            background-color: #4CAF50;
         }
+
+        .custom-toast.error {
+            background-color: #f44336;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
         @keyframes fadeOut {
-            from { opacity: 1; transform: translateX(0); }
-            to { opacity: 0; transform: translateX(100%); }
+            from {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            to {
+                opacity: 0;
+                transform: translateX(100%);
+            }
         }
     </style>
 
@@ -192,17 +214,22 @@
 
                                 </li>
 
+
                                 <li>
-                                    <a href="{{ route('admin.home-settings')}} ">
-                                        <i class="bx bx-home-circle"></i>
-                                        <span key="t-dashboards">Home Page Settings</span>
+                                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                        <i class="bx bx-user-circle"></i>
+                                        <span key="t-authentication">Page Settings</span>
                                     </a>
+                                    <ul class="sub-menu" aria-expanded="false">
+                                        <li><a href="{{ route('admin.home-settings') }}"
+                                                key="t-register">Home Page</a></li>
+
+                                    </ul>
                                 </li>
-    
 
-
+                              
                             @else
-
+                            
                                 <li>
                                     <a href="{{ route('user.dashboard') }}">
                                         <i class="bx bx-home-circle"></i>
@@ -247,7 +274,6 @@
                                         <span key="t-dashboards">Share Referral </span>
                                     </a>
                                 </li>
-
                             @endif
 
 
@@ -258,7 +284,7 @@
                                 </a>
                             </li>
 
-                           
+
 
 
 
@@ -308,12 +334,12 @@
     @yield('script-section')
 
     <script>
-        window.onload = function () {
-            @if(session('success'))
-            
+        window.onload = function() {
+            @if (session('success'))
+
                 showToast('success', "{{ session('success') }}");
             @endif
-    
+
 
             @if ($errors->any())
                 @foreach ($errors->all() as $error)
@@ -322,15 +348,15 @@
             @endif
 
         };
-        
+
         function showToast(type, message) {
 
             const toastContainer = document.getElementById('toastContainer');
             const toast = document.createElement('div');
             toast.classList.add('custom-toast', type);
             toast.innerText = message;
-            toast.style.marginBottom="10px";
-            toast.style.fontSize="12px";
+            toast.style.marginBottom = "10px";
+            toast.style.fontSize = "12px";
 
             toastContainer.appendChild(toast);
 
@@ -339,7 +365,6 @@
                 setTimeout(() => toast.remove(), 300);
             }, 3000);
         }
-
     </script>
 
 </body>

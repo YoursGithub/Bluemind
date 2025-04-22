@@ -9,15 +9,15 @@ use Illuminate\View\Component;
 
 class ImageComponent extends Component
 {
-    public $kycDetails;
+    public $value;
     public $name;
 
     /**
      * Create a new component instance.
      */
-public function __construct( $kycDetails = null,  $name = '')
+public function __construct(string  $name = '' , ?string $value = null  )
 {
-    $this->kycDetails = $kycDetails;
+    $this->value = $value;
     $this->name = $name;
 }
 

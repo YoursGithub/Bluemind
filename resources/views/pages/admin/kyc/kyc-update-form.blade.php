@@ -83,7 +83,7 @@
                                 <div class="row mb-4">
                                     <!-- Aadhaar Card Upload -->
                                     <label  class="col-sm-3 col-form-label">Upload Aadhaar Card Front</label>
-                                    <x-image-component :kycDetails="$kycDetails" :name="'adhaar_card_front'" />
+                                    <x-image-component  :name="'adhaar_card_front'" :value="$kycDetails['adhaar_card_front']" />
 
                                 </div>
 
@@ -92,7 +92,7 @@
                                     <!-- Aadhaar Card Upload -->
                                     <label  class="col-sm-3 col-form-label">Upload Aadhaar Card Back</label>
                                  
-                                    <x-image-component :kycDetails="$kycDetails" :name="'adhaar_card_back'" />
+                                    <x-image-component  :name="'adhaar_card_back'" :value="$kycDetails['adhaar_card_back']" />
 
                                 </div>
 
@@ -119,7 +119,7 @@
                                     <!-- PAN Card Upload -->
                                     <label  class="col-sm-3 col-form-label">Upload PAN Card</label>
                                 
-                                    <x-image-component :kycDetails="$kycDetails" :name="'pan_card'" />
+                                    <x-image-component  :name="'pan_card'" :value="$kycDetails['pan_card']" />
 
                                 </div>
 
@@ -151,7 +151,7 @@
                                 <div class="row mb-4" style="margin: 20px 0">
                                     <!-- PAN Card Upload -->
                                     <label  class="col-sm-3 col-form-label">Upload Selfie</label>
-                                    <x-image-component :kycDetails="$kycDetails" :name="'selfie'" />
+                                    <x-image-component  :name="'selfie'" :value="$kycDetails['selfie']" />
 
                                  
                                 </div>
@@ -190,21 +190,21 @@
                                     <div class="row mb-4">
                                         <!-- Aadhaar Card Upload -->
                                         <label class="col-sm-3 col-form-label">Upload  Nominee Aadhaar Card Front</label>
-                                        <x-image-component :kycDetails="$kycDetails" :name="'nominee_adhaar_card_front'" />
+                                        <x-image-component  :name="'nominee_adhaar_card_front'" :value="$kycDetails['nominee_adhaar_card_front']" />
 
                                     </div>
 
                                     <div class="row mb-4">
                                         <!-- Aadhaar Card Upload -->
                                         <label class="col-sm-3 col-form-label">Upload Nominee Aadhaar Card Back</label>
-                                        <x-image-component :kycDetails="$kycDetails" :name="'nominee_adhaar_card_back'" />
+                                        <x-image-component  :name="'nominee_adhaar_card_back'" :value="$kycDetails['nominee_adhaar_card_back']" />
 
                                     </div>
 
                                     <div class="row mb-4" style="margin: 20px 0">
                                         <!-- PAN Card Upload -->
                                         <label class="col-sm-3 col-form-label">Upload Nominee Selfie</label>
-                                        <x-image-component :kycDetails="$kycDetails" :name="'nominee_selfie'" />
+                                        <x-image-component  :name="'nominee_selfie'" :value="$kycDetails['nominee_selfie']" />
 
                                     </div>
 
@@ -236,31 +236,8 @@
 
 @section('script-section')
 
-<script>
-    // Function to preview the image for Aadhaar or PAN
-    function previewImage(event, type) {
-        const input = event.target;
-        const previewContainer = document.getElementById(`${type}-preview-container`);
-        const previewImage = document.getElementById(`${type}-preview`);
-        const uploadButton = document.getElementById(`upload-${type}-button`);
+<script src="/admin/js/image-script.js"></script>
 
-        if (input.files && input.files[0]) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                previewImage.src = e.target.result;
-                previewContainer.style.display = 'block'; // Show the preview container
-
-                if(uploadButton){
-
-                    uploadButton.style.display = 'none'; // Hide the upload button
-                }
-            };
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-
-
-</script>
 
 
 @endsection

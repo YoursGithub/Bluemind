@@ -10,11 +10,11 @@
     >
     
     <!-- Upload or Change Button -->
-    @if ($kycDetails)
+    @if ($value)
         <div id="{{ $name }}-preview-container" class="mt-3">
             <img 
                 id="{{ $name }}-preview" 
-                src="{{ $kycDetails[$name] }}" 
+                src="{{ $value }}" 
                 alt="{{ ucfirst($name) }} Preview" 
                 style="max-width: 100%; max-height: 300px; border: 1px solid #ddd; padding: 5px;"
             >
