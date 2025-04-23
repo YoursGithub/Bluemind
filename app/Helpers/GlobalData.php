@@ -2,6 +2,8 @@
 
 namespace App\Helpers;
 
+use App\Models\AboutPage;
+use App\Models\ContactPage;
 use App\Models\HomePage;
 
 class GlobalData
@@ -16,6 +18,12 @@ class GlobalData
         }
 
         self::$data->home = HomePage::find(1);
+
+        self::$data->about = AboutPage::find(1);
+
+        self::$data->contact = ContactPage::find(1);
+
+
     }
 
     public static function getData()

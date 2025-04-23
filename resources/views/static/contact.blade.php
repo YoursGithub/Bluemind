@@ -180,8 +180,7 @@
                                                         href="/investment"><span>Investment</span></a>
                                                 </li>
                                                 <li class="menu-item">
-                                                    <a class="scrollspy-btn"
-                                                        href="/roadmap"><span>Roadmap</span></a>
+                                                    <a class="scrollspy-btn" href="/roadmap"><span>Roadmap</span></a>
                                                 </li>
                                                 <li>
                                                     <a class="scrollspy-btn"
@@ -253,7 +252,8 @@
 
                             <div class="header-bar-mobile side-menu d-lg-none ml-20">
                                 <div class="xb-nav-mobile-container">
-                                    <a class="xb-nav-mobile" href="javascript:void(0);"><i class="far fa-bars"></i></a>
+                                    <a class="xb-nav-mobile" href="javascript:void(0);"><i
+                                            class="far fa-bars"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -304,7 +304,8 @@
                                 </div>
                                 <h3>Location</h3>
                                 <p>
-                                    1st Floor, Main Road RML Nagar. Tempostand Down, (N T Road) Shimoga 577205, Karnataka, India.
+                                    
+                                   {{ $globalData->contact?->address }}
                                 </p>
                             </div>
                         </div>
@@ -316,7 +317,12 @@
                                 <h3>Contact</h3>
                                 <p>
                                     <a>Phone</a> <br>
-                                    <a href="tel:++918182467450">+918182-467450</a>
+                                    <a href="tel:+{{ $globalData->contact?->phone }}">
+
+                                   {{ $globalData->contact?->phone }}
+
+
+                                    </a>
                                 </p>
                             </div>
                         </div>
@@ -332,14 +338,14 @@
                                 </p>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
                 <style>
                     .contact-info__item {
-    min-height: 410px; /* Adjust this value as needed */
-}
-
+                        min-height: 410px;
+                        /* Adjust this value as needed */
+                    }
                 </style>
             </section>
             <!-- contact end -->
@@ -347,122 +353,139 @@
             <!-- google map start -->
             <section class="google-map">
                 <div class="google-map__inner">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3872.5526543198976!2d75.56446627461854!3d13.925666493245316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbba9b55bf5a07d%3A0x6ba40935c1fc391b!2sBluemind%20Global!5e0!3m2!1sen!2sin!4v1720623595238!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                </div>
+                    <iframe
+                        src="{{ $globalData->contact?->location_url }}"                        
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
             </section>
             <!-- google map end -->
 
         </main>
         <!-- main area end  -->
 
-    <!-- footer strt -->
-<footer class="footer bg_img pos-rel mt-110" data-background="assets/img/bg/footer-bg.png">
-    <div class="container">
-        <div class="xb-contact">
-            <div class="row g-0 mt-none-30">
-                <div class="col-lg-7 mt-30">
-                    <div class="xb-inner bg_img" data-background="assets/img/bg/form_bg.png">
-                        <h2 class="xb-item--title">Reach out to us anytime!</h2>
-                        <form class="xb-item--form" action="#!">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="xb-item--field">
-                                        <span><img src="/assets/img/footer/contact-user.svg" alt=""></span>
-                                        <input type="text" id="fullName" placeholder="Full Name" required>
+        <!-- footer strt -->
+        <footer class="footer bg_img pos-rel mt-110" data-background="assets/img/bg/footer-bg.png">
+            <div class="container">
+                <div class="xb-contact">
+                    <div class="row g-0 mt-none-30">
+                        <div class="col-lg-7 mt-30">
+                            <div class="xb-inner bg_img" data-background="assets/img/bg/form_bg.png">
+                                <h2 class="xb-item--title">Reach out to us anytime!</h2>
+                                <form class="xb-item--form" action="#!">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="xb-item--field">
+                                                <span><img src="/assets/img/footer/contact-user.svg"
+                                                        alt=""></span>
+                                                <input type="text" id="fullName" placeholder="Full Name"
+                                                    required>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="xb-item--field">
+                                                <span><img src="/assets/img/footer/contact-email.svg"
+                                                        alt=""></span>
+                                                <input type="email" id="email" placeholder="Email" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="xb-item--field">
+                                                <span><img src="/assets/img/footer/call.svg" alt=""></span>
+                                                <input type="tel" id="number" placeholder="Enter your number"
+                                                    required>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="xb-item--field">
+                                                <span><img src="/assets/img/footer/contact-message.svg"
+                                                        alt=""></span>
+                                                <input type="text" id="message" placeholder="Type Your Message"
+                                                    required>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 form-check xb-item--checkbox">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="flexCheckDefault">
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                                By sending this form I confirm that I have read and accept the <br>
+                                                <a target="_blank"
+                                                    href="https://firebasestorage.googleapis.com/v0/b/blue-mindglobal.appspot.com/o/Privacy%20Policy.pdf?alt=media&token=506e68c5-d663-4317-ba1a-feee2f3b27b9">privacy
+                                                    policy</a>
+                                            </label>
+                                        </div>
+                                        <div class="col-lg-12 xb-item--contact-btn">
+                                            <button class="them-btn them-active" type="submit" id="submitBtn">
+                                                <span style="margin-right: 10px;">Send Message</span>
+                                                <svg width="15" height="14" viewBox="0 0 15 14"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M14.434 0.999999C14.434 0.447714 13.9862 -8.61581e-07 13.434 -1.11446e-06L4.43396 -3.13672e-07C3.88168 -6.50847e-07 3.43396 0.447715 3.43396 0.999999C3.43396 1.55228 3.88168 2 4.43396 2L12.434 2L12.434 10C12.434 10.5523 12.8817 11 13.434 11C13.9862 11 14.434 10.5523 14.434 10L14.434 0.999999ZM2.14107 13.7071L14.1411 1.70711L12.7269 0.292893L0.726853 12.2929L2.14107 13.7071Z"
+                                                        fill="black" />
+                                                </svg>
+                                            </button>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="xb-item--field">
-                                        <span><img src="/assets/img/footer/contact-email.svg" alt=""></span>
-                                        <input type="email" id="email" placeholder="Email" required>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="xb-item--field">
-                                        <span><img src="/assets/img/footer/call.svg" alt=""></span>
-                                        <input type="tel" id="number" placeholder="Enter your number" required>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="xb-item--field">
-                                        <span><img src="/assets/img/footer/contact-message.svg" alt=""></span>
-                                        <input type="text" id="message" placeholder="Type Your Message" required>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 form-check xb-item--checkbox">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        By sending this form I confirm that I have read and accept the <br>
-                                        <a target="_blank" href="https://firebasestorage.googleapis.com/v0/b/blue-mindglobal.appspot.com/o/Privacy%20Policy.pdf?alt=media&token=506e68c5-d663-4317-ba1a-feee2f3b27b9">privacy
-                                            policy</a>
-                                    </label>
-                                </div>
-                                <div class="col-lg-12 xb-item--contact-btn">
-                                    <button class="them-btn them-active" type="submit" id="submitBtn">
-                                        <span style="margin-right: 10px;">Send Message</span>
-                                        <svg width="15" height="14" viewBox="0 0 15 14" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M14.434 0.999999C14.434 0.447714 13.9862 -8.61581e-07 13.434 -1.11446e-06L4.43396 -3.13672e-07C3.88168 -6.50847e-07 3.43396 0.447715 3.43396 0.999999C3.43396 1.55228 3.88168 2 4.43396 2L12.434 2L12.434 10C12.434 10.5523 12.8817 11 13.434 11C13.9862 11 14.434 10.5523 14.434 10L14.434 0.999999ZM2.14107 13.7071L14.1411 1.70711L12.7269 0.292893L0.726853 12.2929L2.14107 13.7071Z"
-                                                fill="black" />
-                                        </svg>
-                                    </button>
+                                </form>
+
+                                <script>
+                                    document.addEventListener('DOMContentLoaded', function() {
+                                        const form = document.querySelector('.xb-item--form');
+
+                                        form.addEventListener('submit', function(event) {
+                                            event.preventDefault();
+
+                                            const name = document.getElementById('fullName').value;
+                                            const email = document.getElementById('email').value;
+                                            const contact = document.getElementById('number').value;
+                                            const message = document.getElementById('message').value;
+
+                                            fetch('https://script.google.com/macros/s/AKfycbxoyCaf2DRTw0TSt5oeD-Z48fni-DaL-4sEqb6IRA7w4S55z_laF7agnyX1jIP_g9M-/exec', {
+                                                    method: 'POST',
+                                                    mode: 'no-cors',
+                                                    headers: {
+                                                        'Content-Type': 'application/json'
+                                                    },
+                                                    body: JSON.stringify({
+                                                        name: name,
+                                                        email: email,
+                                                        contact: contact,
+                                                        message: message
+                                                    })
+                                                })
+                                                .then(response => {
+                                                    alert('Your message has been sent!');
+                                                    form.reset();
+                                                })
+                                                .catch(error => {
+                                                    console.error('Error:', error);
+                                                });
+                                        });
+                                    });
+                                </script>
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-5 mt-30 pc-only">
+                            <div class="testimonial-wrap bg_img" data-background="assets/img/bg/tm_bg.png">
+                                <div class="xb-item--img mt-145">
+                                    <img src="/assets/img/logo/Logo_new1.png" alt="">
                                 </div>
                             </div>
-                        </form>
-
-                        <script>
-                            document.addEventListener('DOMContentLoaded', function () {
-                                const form = document.querySelector('.xb-item--form');
-
-                                form.addEventListener('submit', function (event) {
-                                    event.preventDefault();
-
-                                    const name = document.getElementById('fullName').value;
-                                    const email = document.getElementById('email').value;
-                                    const contact = document.getElementById('number').value;
-                                    const message = document.getElementById('message').value;
-
-                                    fetch('https://script.google.com/macros/s/AKfycbxoyCaf2DRTw0TSt5oeD-Z48fni-DaL-4sEqb6IRA7w4S55z_laF7agnyX1jIP_g9M-/exec', {
-                                        method: 'POST',
-                                        mode: 'no-cors',
-                                        headers: {
-                                            'Content-Type': 'application/json'
-                                        },
-                                        body: JSON.stringify({ name: name, email: email, contact: contact, message: message })
-                                    })
-                                        .then(response => {
-                                            alert('Your message has been sent!');
-                                            form.reset();
-                                        })
-                                        .catch(error => {
-                                            console.error('Error:', error);
-                                        });
-                                });
-                            });
-                        </script>
-                    </div>
-                </div>
-            
-             
-                <div class="col-lg-5 mt-30 pc-only">
-                    <div class="testimonial-wrap bg_img" data-background="assets/img/bg/tm_bg.png">
-                        <div class="xb-item--img mt-145">
-                            <img src="/assets/img/logo/Logo_new1.png" alt="">
                         </div>
+
+                        <style>
+                            /* Hide the section on screens smaller than 992px (tablet and mobile devices) */
+                            @media (max-width: 991px) {
+                                .pc-only {
+                                    display: none;
+                                }
+                            }
+                        </style>
                     </div>
-                </div>
-                
-                <style>
-                    /* Hide the section on screens smaller than 992px (tablet and mobile devices) */
-                    @media (max-width: 991px) {
-                        .pc-only {
-                            display: none;
-                        }
-                    }
-                </style>
                 </div>
             </div>
-        </div>
     </div>
     <div class="container">
         <div class="xb-footer-bottom">
@@ -501,9 +524,12 @@
                                 href="https://www.facebook.com/share/S4r9LyM8ZFTuD3ym/?mibextid=qi2Omg"><i
                                     class="fab fa-facebook-f"></i></a>
                         </li>
-                        <li><a target="_blank" href="https://www.youtube.com/@BlueMindGlobal"><i class="fab fa-youtube"></i></a>
+                        <li><a target="_blank" href="https://www.youtube.com/@BlueMindGlobal"><i
+                                    class="fab fa-youtube"></i></a>
                         </li>
-                        <li><a target="_blank" href="https://www.linkedin.com/in/bluemind-global-a54776320?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BOTiAqeHuRBmUswb7KtxuJQ%3D%3D"><i class="fab fa-linkedin"></i></a>
+                        <li><a target="_blank"
+                                href="https://www.linkedin.com/in/bluemind-global-a54776320?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BOTiAqeHuRBmUswb7KtxuJQ%3D%3D"><i
+                                    class="fab fa-linkedin"></i></a>
                         </li>
                         <li><a target="_blank" href="https://www.instagram.com/bluemind_global"><i
                                     class="fab fa-instagram"></i></a>
@@ -527,15 +553,15 @@
             </div> -->
         </div>
     </div>
-</footer>
+    </footer>
     <!-- footer end -->
 
     </div>
 
     <!-- jquery include -->
 
-      
-      
+
+
     <script src="/assets/js/jquery-3.7.1.min.js"></script>
     <script src="/assets/js/bootstrap.bundle.min.js"></script>
     <script src="/assets/js/swiper.min.js"></script>

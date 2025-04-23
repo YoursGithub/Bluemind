@@ -169,6 +169,8 @@
                         @auth
 
                             @if (Auth::user()->is_admin)
+
+
                                 <li>
                                     <a href="{{ route('admin.dashboard') }}">
                                         <i class="bx bx-home-circle"></i>
@@ -221,15 +223,23 @@
                                         <span key="t-authentication">Page Settings</span>
                                     </a>
                                     <ul class="sub-menu" aria-expanded="false">
-                                        <li><a href="{{ route('admin.home-settings') }}"
-                                                key="t-register">Home Page</a></li>
+                                        <li>
+                                            <a href="{{ route('admin.home-settings') }}" key="t-register">Home Page</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('admin.about-settings') }}" key="t-register">About Page</a>
+                                        </li>
 
+                                        <li>
+                                            <a href="{{ route('admin.contact-settings') }}" key="t-register">Contact Page</a>
+                                        </li>
                                     </ul>
                                 </li>
 
-                              
+                                
                             @else
-                            
+
+
                                 <li>
                                     <a href="{{ route('user.dashboard') }}">
                                         <i class="bx bx-home-circle"></i>
@@ -274,6 +284,8 @@
                                         <span key="t-dashboards">Share Referral </span>
                                     </a>
                                 </li>
+
+
                             @endif
 
 

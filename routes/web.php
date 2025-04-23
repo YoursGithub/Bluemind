@@ -61,7 +61,13 @@ Route::prefix('admin')->as('admin.')->middleware('isAdmin')->group(function () {
     Route::controller(MiscPageController::class)->group(function () {
 
         Route::get('/home-settings', 'homeSettingsView')->name('home-settings');
-        Route::post('/home-settings', 'homeSettingsStore')->name('home-settings');
+        Route::post('/home-settings', 'homeSettingsCreate')->name('home-settings');
+
+        Route::get('/about-settings', 'aboutSettingsView')->name('about-settings');
+        Route::post('/about-settings', 'aboutSettingsCreate')->name('about-settings');
+
+        Route::get('/contact-settings', 'contactSettingsView')->name('contact-settings');
+        Route::post('/contact-settings', 'contactSettingsCreate')->name('contact-settings');
 
     });
 
