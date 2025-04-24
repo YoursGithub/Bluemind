@@ -70,6 +70,9 @@ return new class extends Migration
             $table->longText('nominee_adhaar_card_back')->nullable();
             $table->longText('nominee_selfie')->nullable();
 
+            //payment screenshot
+            $table->longText('payment_screenshot')->nullable();
+
 
             $table->boolean('is_kyc_verified')->default(0);
             $table->foreignId('user_id')->nullable()->constrained('users')->onDelete('set null');

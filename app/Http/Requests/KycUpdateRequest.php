@@ -27,7 +27,7 @@ class KycUpdateRequest extends FormRequest
             'account_number' => 'required|string|max:255',
             'branch_name' => 'required|string|max:255',
             'ifsc_code' => 'required|string',
-    
+
             // Aadhaar details
             'adhaar_number' => 'required|string',
             'adhaar_name' => 'required|string|max:255',
@@ -35,15 +35,15 @@ class KycUpdateRequest extends FormRequest
             'pin_code' => 'required|string',
             'adhaar_card_front' => 'image|mimes:jpeg,png,jpg| max:2048',
             'adhaar_card_back' => 'image|mimes:jpeg,png,jpg| max:2048',
-    
+
             // PAN details
             'pan_number' => 'required|string',
             'pan_name' => 'required|string|max:255',
             'pan_card' => 'image |mimes:jpeg,png,jpg| max:2048',
-    
+
             // Personal details
             'annual_income' => 'required|string|max:255',
-  
+
             // Selfie
             'selfie' => 'image |mimes:jpeg,png,jpg| max:2048',
 
@@ -51,10 +51,13 @@ class KycUpdateRequest extends FormRequest
             'nominee_name' => 'required|string|max:255',
             'nominee_phone' => 'required|string|max:255',
             'nominee_adhaar_number' => 'required|string|max:255',
-            
-            'nominee_adhaar_card_front' =>'image |mimes:jpeg,png,jpg| max:2048', 
-            'nominee_adhaar_card_back' =>'image |mimes:jpeg,png,jpg| max:2048', 
+
+            'nominee_adhaar_card_front' => 'image |mimes:jpeg,png,jpg| max:2048',
+            'nominee_adhaar_card_back' => 'image |mimes:jpeg,png,jpg| max:2048',
             'nominee_selfie' => 'image |mimes:jpeg,png,jpg| max:2048',
+
+            //payment_screenshot
+            'payment_screenshot' => 'image |mimes:jpeg,png,jpg| max:2048',
 
 
         ];

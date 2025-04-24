@@ -60,15 +60,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="card-title mb-4">KYC Form</h4>
-                                    @if ($errors->any())
-                                        <div class="alert alert-danger">
-                                            <ul>
-                                                @foreach ($errors->all() as $error)
-                                                    <li>{{ $error }}</li>
-                                                @endforeach
-                                            </ul>
-                                        </div>
-                                    @endif
+                                    
 
                                     <form action="{{ route('user.kyc') }}" method="POST" enctype="multipart/form-data">
                                         @csrf
@@ -286,6 +278,14 @@
                                             <!-- PAN Card Upload -->
                                             <label class="col-sm-3 col-form-label">Upload Nominee Selfie</label>
                                             <x-image-component :name="'nominee_selfie'" />
+
+                                        </div>
+
+
+                                        <div class="row mb-4" style="margin: 20px 0">
+                                            <!-- PAN Card Upload -->
+                                            <label class="col-sm-3 col-form-label">Upload Payment Screenshot</label>
+                                            <x-image-component :name="'payment_screenshot'" />
 
                                         </div>
 

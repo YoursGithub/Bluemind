@@ -196,6 +196,9 @@ class AdminUserController extends Controller
         $this->imageUpload( $request , "nominee_adhaar_card_back") ;
         $this->imageUpload( $request , "nominee_selfie") ;
 
+        $this->imageUpload( $request , "payment_screenshot") ;
+
+
 
         $kycDetails = $request->post() ;
 

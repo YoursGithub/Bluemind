@@ -56,13 +56,16 @@ class UserKycController extends Controller
             $kycDetails['nominee_selfie'] = $this->imageUpload($request->file('nominee_selfie'),'nominee_selfie') ;
 
 
+            $kycDetails['payment_screenshot'] = $this->imageUpload($request->file('payment_screenshot'),'payment_screenshot') ;
+
+
 
             $kycDetails['user_id'] = Auth::user()->id ;
 
             BankDetail::create($kycDetails) ;
 
 
-            return to_route('dashboard')->with(['success'=>'Kyc submitted successfully']);
+            return to_route('user.dashboard')->with(['success'=>'Kyc submitted successfully']);
 
         } catch (\Throwable $th) {
 

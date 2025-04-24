@@ -169,18 +169,16 @@
                         @auth
 
                             @if (Auth::user()->is_admin)
-
-
                                 <li>
                                     <a href="{{ route('admin.dashboard') }}">
-                                        <i class="bx bx-home-circle"></i>
+                                        <i class="bx bx-user-circle"></i>
                                         <span key="t-dashboards">Admin Dashboard</span>
                                     </a>
                                 </li>
 
                                 <li>
                                     <a href="{{ route('admin.all-users') }}">
-                                        <i class="bx bx-home-circle"></i>
+                                        <i class="bx bx-user-circle"></i>
                                         <span key="t-dashboards">Users</span>
                                     </a>
                                 </li>
@@ -231,18 +229,26 @@
                                         </li>
 
                                         <li>
-                                            <a href="{{ route('admin.contact-settings') }}" key="t-register">Contact Page</a>
+                                            <a href="{{ route('admin.contact-settings') }}" key="t-register">Contact
+                                                Page</a>
                                         </li>
+
+
+
                                     </ul>
                                 </li>
 
-                                
-                            @else
-
 
                                 <li>
+                                    <a href="{{ route('admin.all-branches') }}">
+                                        <i class="bx bx-user-circle"></i>
+                                        <span key="t-dashboards">Branch Settings</span>
+                                    </a>
+                                </li>
+                            @else
+                                <li>
                                     <a href="{{ route('user.dashboard') }}">
-                                        <i class="bx bx-home-circle"></i>
+                                        <i class="bx bx-user-circle"></i>
                                         <span key="t-dashboards">User Dashboard</span>
                                     </a>
                                 </li>
@@ -250,14 +256,12 @@
                                 @if (!Auth::user()->bankDetails?->is_kyc_verified)
                                     <li>
                                         <a href="{{ route('user.kyc') }}">
-                                            <i class="bx bx-home-circle"></i>
+                                            <i class="bx bx-user-circle"></i>
+
                                             <span key="t-dashboards">KYC</span>
                                         </a>
                                     </li>
                                 @endif
-
-
-
 
                                 <li>
                                     <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -280,18 +284,16 @@
 
                                 <li>
                                     <a href="{{ route('user.shareReferral') }}">
-                                        <i class="bx bx-home-circle"></i>
+                                        <i class="bx bx-user-circle"></i>
                                         <span key="t-dashboards">Share Referral </span>
                                     </a>
                                 </li>
-
-
                             @endif
 
 
                             <li>
                                 <a href="/account-settings">
-                                    <i class="bx bx-home-circle"></i>
+                                    <i class="bx bx-user-circle"></i>
                                     <span key="t-dashboards">Account Settings</span>
                                 </a>
                             </li>

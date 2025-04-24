@@ -56,6 +56,10 @@ class KycRequest extends FormRequest
             'nominee_adhaar_card_front' =>'required|image |mimes:jpeg,png,jpg| max:2048', 
             'nominee_adhaar_card_back' =>'required|image |mimes:jpeg,png,jpg| max:2048', 
             'nominee_selfie' => 'required|image |mimes:jpeg,png,jpg| max:2048',
+
+            //payment_screenshot
+            'payment_screenshot' => 'required|image |mimes:jpeg,png,jpg| max:2048',
+
         ];
     }
     

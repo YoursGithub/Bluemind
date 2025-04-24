@@ -3,6 +3,7 @@
 namespace App\Helpers;
 
 use App\Models\AboutPage;
+use App\Models\Branch;
 use App\Models\ContactPage;
 use App\Models\HomePage;
 
@@ -22,6 +23,9 @@ class GlobalData
         self::$data->about = AboutPage::find(1);
 
         self::$data->contact = ContactPage::find(1);
+
+        self::$data->branch = Branch::all();
+
 
 
     }

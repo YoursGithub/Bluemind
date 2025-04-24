@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Admin\AdminInvestmentController;
 use App\Http\Controllers\Admin\AdminUserController;
+use App\Http\Controllers\Admin\BranchController;
 use App\Http\Controllers\Admin\MiscPageController;
 use App\Http\Controllers\ForgetPasswordController;
 use App\Http\Controllers\User\EmailVerificationController;
@@ -71,6 +72,12 @@ Route::prefix('admin')->as('admin.')->middleware('isAdmin')->group(function () {
 
     });
 
+
+    Route::controller(BranchController::class)->group(function () {
+    
+        Route::get('/all-branches', 'allBranchesView')->name('all-branches');
+
+    });
 
 
     Route::controller(AdminUserController::class)->group(function () {
@@ -152,7 +159,7 @@ Route::as('user.')->middleware(['auth', 'isVerified'])->group(function () {
 
         Route::get('/dashboard', 'dashboard')->name('dashboard');
 
-        Route::get('/qwe', 'shareReferralView')->name('shareReferral');
+        Route::get('/share-referral', 'shareReferralView')->name('shareReferral');
     });
 });
 
