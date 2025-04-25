@@ -27,6 +27,8 @@
     @yield('head-section')
 
     <style>
+   
+
         .toast-container {
             position: fixed;
             top: 20px;
@@ -235,11 +237,13 @@
                                         </li>
 
                                         <li>
-                                            <a href="{{ route('admin.social-settings') }}" key="t-register">Social Media </a>
+                                            <a href="{{ route('admin.social-settings') }}" key="t-register">Social Media
+                                            </a>
                                         </li>
 
                                         <li>
-                                            <a href="{{ route('admin.download-settings') }}" key="t-register">Downloads Section </a>
+                                            <a href="{{ route('admin.download-settings') }}" key="t-register">Downloads
+                                                Section </a>
                                         </li>
 
 
@@ -251,6 +255,14 @@
                                     <a href="{{ route('admin.all-branches') }}">
                                         <i class="bx bx-user-circle"></i>
                                         <span key="t-dashboards">Branch Settings</span>
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a href="{{ route('admin.all-gallery') }}">
+                                        <i class="bx bx-user-circle"></i>
+                                        <span key="t-dashboards">Gallery Settings</span>
                                     </a>
                                 </li>
                             @else

@@ -6,6 +6,7 @@ use App\Models\AboutPage;
 use App\Models\Branch;
 use App\Models\ContactPage;
 use App\Models\DownloadPdf;
+use App\Models\Gallery;
 use App\Models\HomePage;
 use App\Models\SocialMedia;
 
@@ -31,6 +32,9 @@ class GlobalData
         self::$data->social = SocialMedia::find(1);
 
         self::$data->download = DownloadPdf::find(1);
+
+        self::$data->gallery = Gallery::with('images')->get();
+
 
 
 
