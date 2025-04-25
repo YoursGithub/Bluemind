@@ -25,7 +25,7 @@
                     </div>
 
                     <div class="col-12" style="margin-bottom: 40px;">
-                        <a href="{{ route('admin.create-user') }}">
+                        <a href="{{ route('admin.create-branch') }}">
 
                             <button type="button" class="btn btn-success waves-effect waves-light">
                                 <i class="bx bx-user-plus"></i> Create Branch
@@ -38,6 +38,11 @@
 
                 <!-- end page title -->
 
+                @php
+                    $datas = $globalData->branch;
+                @endphp
+
+
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
@@ -48,65 +53,43 @@
                                         <tr>
                                             <th>S No.</th>
 
-                                            <th>Email</th>
-                                            <th>Referred By</th>
-                                            <th>Login Referral Code</th>
-                                            <th>Sharing Referral Code</th>
+                                            <th>Image</th>
 
-                                            <th>Start date</th>
-                                            <th>Edit</th>
+                                            <th>Designation</th>
+
+                                            <th>Address</th>
+
+                                            <th>Delete</th>
 
                                         </tr>
                                     </thead>
 
                                     <tbody>
-                                        {{-- @foreach ($users as $user)
+                                        @foreach ($datas as $data)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
 
-                                                <td>{{ $user['email'] }}</td>
-                                                <td>{{ $user['parent_user']['email'] ?? 'Admin' }}</td>
-
-
-
-                                                @isset($user['parent_referral']['code'])
-                                                    <td>{{ $user['parent_referral']['code'] }}</td>
-                                                @else
-                                                    <td>
-                                                        <a href="{{ route('admin.generate-referral', ['user' => $user['id']]) }}">
-                                                            <button type="button"
-                                                                class="btn btn-success waves-effect waves-light">Generate
-                                                                Referral</button></a>
-                                                    </td>
-                                                @endisset
-
-
-
-                                                <td>{{ $user['sharing_referral']['code'] }}</td>
-
-
-
-
-                                                @isset($user['email_verified_at'])
-                                                    <td>{{ \Carbon\Carbon::parse($user['email_verified_at'])->format('d F Y') }}
-                                                    </td>
-                                                @else
-                                                    <td>
-                                                        <a href="{{ route('admin.user-email-verify', ['user' => $user['id']]) }}">
-                                                            <button type="button"
-                                                                class="btn btn-success waves-effect waves-light">Verify
-                                                                Email</button></a>
-                                                    </td>
-                                                @endisset
-
-
-                                                <td style="width: 100px">
-                                                    <a class="btn btn-outline-secondary btn-sm edit" title="Edit">
-                                                        <i class="fas fa-pencil-alt"></i>
-                                                    </a>
+                                                <td>
+                                                    <img src="{{ $data->image }}" alt="" style="max-width: 250px">
                                                 </td>
+
+                                                <td>{{ $data->designation }}</td>
+
+                                                <td>{{ $data->address }}</td>
+
+
+                                                <td>
+                                                    <form action="{{ route('admin.delete-branch', ['id' => $data['id']]) }}"
+                                                        method="POST">
+                                                        @csrf
+                                                        <button type="submit"
+                                                            class="btn btn-danger waves-effect waves-light">Delete</button>
+                                                    </form>
+                                                </td>
+
+
                                             </tr>
-                                        @endforeach --}}
+                                        @endforeach
 
                                     </tbody>
                                 </table>

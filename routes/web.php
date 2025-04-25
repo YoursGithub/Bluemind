@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Admin\AdminInvestmentController;
 use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\BranchController;
+use App\Http\Controllers\Admin\ExportController;
 use App\Http\Controllers\Admin\MiscPageController;
 use App\Http\Controllers\ForgetPasswordController;
 use App\Http\Controllers\User\EmailVerificationController;
@@ -59,6 +60,8 @@ Route::prefix('admin')->as('admin.')->middleware(['isLoggedIn'])->controller(Adm
 
 Route::prefix('admin')->as('admin.')->middleware('isAdmin')->group(function () {
 
+    Route::post('/export-csv',[ExportController::class,'export'])->name('export-csv') ;
+
     Route::controller(MiscPageController::class)->group(function () {
 
         Route::get('/home-settings', 'homeSettingsView')->name('home-settings');
@@ -84,6 +87,13 @@ Route::prefix('admin')->as('admin.')->middleware('isAdmin')->group(function () {
     Route::controller(BranchController::class)->group(function () {
 
         Route::get('/all-branches', 'allBranchesView')->name('all-branches');
+
+        Route::get('/create-branch', 'singleBranchView')->name('create-branch');
+        Route::post('/create-branch', 'singleBranchCreate')->name('create-branch');
+
+        Route::post('/delete-branch/{id}', 'singleBranchDelete')->name('delete-branch');
+
+
     });
 
 

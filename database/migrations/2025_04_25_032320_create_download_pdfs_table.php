@@ -21,8 +21,6 @@ return new class extends Migration
 
             $table->text('trading_investment')->nullable() ;
 
-            $table->text('terms_conditions')->nullable() ;
-
             $table->timestamps();
         });
     }

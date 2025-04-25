@@ -423,68 +423,57 @@
                 </div>
                 <div class="partner-active partner-slider ul_li">
                     <div class="swiper-wrapper" style="margin-left: 20px;">
-                        <div class="swiper-slide">
-                            <div class="partner-card"
-                                style="width: 280px; height: 250px; border-radius: 12px; overflow: hidden; font-family: Arial, sans-serif; background: linear-gradient(135deg, #141b31 0%, #0a0e1a 100%); box-shadow: 0 8px 24px rgba(0,0,0,0.3); position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: transform 0.3s ease, box-shadow 0.3s ease;"
-                                onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 28px rgba(0,0,0,0.4)';"
-                                onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 24px rgba(0,0,0,0.3)';">
 
-                                <div class="partner-logo"
-                                    style="width: 100%; height: 120px; display: flex; justify-content: center; align-items: center; margin-bottom: 5px;">
-                                    <img src="/assets/img/partner/Gateio.png" alt="Binance Logo"
-                                        style="max-width: 120px; max-height: 100px; object-fit: contain;">
-                                </div>
+                        @foreach ( $globalData->branch as $branch )
+                        
+                            @php
+                                $name = $branch?->name ;
+                                $designation = $branch?->designation ;
+                                $address = $branch?->address ;
+                                $image = $branch?->image ;
 
-                                <div class="partner-name"
-                                    style="font-size: 20px; font-weight: bold; color: #ffffff; margin: 10px 0; text-align: center;">
-                                    Binancioooo
-                                </div>
+                            @endphp
 
-                                <div class="partner-info"
-                                    style="font-size: 12px; color: #8a8d98; text-align: center; line-height: 1.4; width: 85%; margin-bottom: 10px;">
-                                    <div style="margin-bottom: 5px; color: #00b4ff;">Leading Cryptocurrency Exchange
+
+
+                            <div class="swiper-slide">
+                                <div class="partner-card"
+                                    style="width: 280px; height: 250px; border-radius: 12px; overflow: hidden; font-family: Arial, sans-serif; background: linear-gradient(135deg, #141b31 0%, #0a0e1a 100%); box-shadow: 0 8px 24px rgba(0,0,0,0.3); position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: transform 0.3s ease, box-shadow 0.3s ease;"
+                                    onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 28px rgba(0,0,0,0.4)';"
+                                    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 24px rgba(0,0,0,0.3)';">
+
+                                    <div class="partner-logo"
+                                        style="width: 100%; height: 120px; display: flex; justify-content: center; align-items: center; margin-bottom: 5px;">
+                                        <img src="{{ $image }}" alt="Binance Logo"
+                                            style="max-width: 120px; max-height: 100px; object-fit: contain;">
                                     </div>
-                                    <div>One Binance Square, Financial District</div>
-                                    <div>Singapore 049908</div>
-                                </div>
 
-                                <div
-                                    style="position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, #00b4ff, #2b6aff); opacity: 0.8;">
+                                    <div class="partner-name"
+                                        style="font-size: 20px; font-weight: bold; color: #ffffff; margin: 10px 0; text-align: center;">
+                                        {{ $name }}
+                                        Name
+                                    </div>
+
+                                    <div class="partner-info"
+                                        style="font-size: 12px; color: #8a8d98; text-align: center; line-height: 1.4; width: 85%; margin-bottom: 10px;">
+                                        <div style="margin-bottom: 5px; color: #00b4ff;">
+                                            {{ $designation }}
+                                        </div>
+
+                                        <div>{{ $address }}</div>
+                                        {{-- <div>Singapore 049908</div> --}}
+                                    </div>
+
+                                    <div
+                                        style="position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, #00b4ff, #2b6aff); opacity: 0.8;">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+
+                        @endforeach
 
 
-                        <div class="swiper-slide">
-                            <div class="partner-card"
-                                style="width: 280px; height: 250px; border-radius: 12px; overflow: hidden; font-family: Arial, sans-serif; background: linear-gradient(135deg, #141b31 0%, #0a0e1a 100%); box-shadow: 0 8px 24px rgba(0,0,0,0.3); position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: transform 0.3s ease, box-shadow 0.3s ease;"
-                                onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 28px rgba(0,0,0,0.4)';"
-                                onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 24px rgba(0,0,0,0.3)';">
-
-                                <div class="partner-logo"
-                                    style="width: 100%; height: 120px; display: flex; justify-content: center; align-items: center; margin-bottom: 5px;">
-                                    <img src="/assets/img/partner/bybit.png" alt="Binance Logo"
-                                        style="max-width: 120px; max-height: 100px; object-fit: contain;">
-                                </div>
-
-                                <div class="partner-name"
-                                    style="font-size: 20px; font-weight: bold; color: #ffffff; margin: 10px 0; text-align: center;">
-                                    Binancioooo
-                                </div>
-
-                                <div class="partner-info"
-                                    style="font-size: 12px; color: #8a8d98; text-align: center; line-height: 1.4; width: 85%; margin-bottom: 10px;">
-                                    <div style="margin-bottom: 5px; color: #00b4ff;">Leading Cryptocurrency Exchange
-                                    </div>
-                                    <div>One Binance Square, Financial District</div>
-                                    <div>Singapore 049908</div>
-                                </div>
-
-                                <div
-                                    style="position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, #00b4ff, #2b6aff); opacity: 0.8;">
-                                </div>
-                            </div>
-                        </div>
+                     
                     </div>
                 </div>
             </section>

@@ -123,7 +123,6 @@ class MiscPageController extends Controller
             'business_proposal' => ['mimes:pdf'],
             'referral_plan' => ['mimes:pdf'],
             'trading_investment' => ['mimes:pdf'],
-            'terms_conditions' => ['mimes:pdf'],
         ]);
 
         foreach ($validated as $name => $file) {

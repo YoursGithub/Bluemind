@@ -54,14 +54,7 @@
                                     </div>
 
 
-                                    <div class="mb-4">
-                                        <label class="form-label">Terms and Conditions :</label>
-                                        <input type="file" name="terms_conditions" accept="application/pdf"
-                                            class="form-control pdf-input">
-                                        <iframe src="{{ $data?->terms_conditions }}" class="pdf-preview w-100 border mt-2"
-                                            height="400" style=""></iframe>
-                                    </div>
-
+                                    
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>
 

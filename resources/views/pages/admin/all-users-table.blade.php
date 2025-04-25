@@ -40,6 +40,12 @@
 
             </div>
           
+
+            <form method="POST" action="{{ route('admin.export-csv') }}">
+                @csrf
+                <input type="hidden" name="data" value="{{ json_encode($users) }}">
+                <button type="submit" class="btn btn-sm btn-success">Export CSV</button>
+            </form>
        
             
 
