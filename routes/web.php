@@ -70,13 +70,16 @@ Route::prefix('admin')->as('admin.')->middleware('isAdmin')->group(function () {
         Route::get('/contact-settings', 'contactSettingsView')->name('contact-settings');
         Route::post('/contact-settings', 'contactSettingsCreate')->name('contact-settings');
 
+        Route::get('/social-settings', 'socialSettingsView')->name('social-settings');
+        Route::post('/social-settings', 'socialSettingsCreate')->name('social-settings');
+
+
     });
 
 
     Route::controller(BranchController::class)->group(function () {
-    
-        Route::get('/all-branches', 'allBranchesView')->name('all-branches');
 
+        Route::get('/all-branches', 'allBranchesView')->name('all-branches');
     });
 
 

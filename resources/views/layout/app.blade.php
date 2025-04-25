@@ -221,6 +221,7 @@
                                         <span key="t-authentication">Page Settings</span>
                                     </a>
                                     <ul class="sub-menu" aria-expanded="false">
+
                                         <li>
                                             <a href="{{ route('admin.home-settings') }}" key="t-register">Home Page</a>
                                         </li>
@@ -231,6 +232,10 @@
                                         <li>
                                             <a href="{{ route('admin.contact-settings') }}" key="t-register">Contact
                                                 Page</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="{{ route('admin.social-settings') }}" key="t-register">Social Media </a>
                                         </li>
 
 

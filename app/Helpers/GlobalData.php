@@ -6,6 +6,7 @@ use App\Models\AboutPage;
 use App\Models\Branch;
 use App\Models\ContactPage;
 use App\Models\HomePage;
+use App\Models\SocialMedia;
 
 class GlobalData
 {
@@ -25,6 +26,9 @@ class GlobalData
         self::$data->contact = ContactPage::find(1);
 
         self::$data->branch = Branch::all();
+
+        self::$data->social = SocialMedia::find(1);
+
 
 
 

@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\AboutPage;
 use App\Models\ContactPage;
 use App\Models\HomePage;
+use App\Models\SocialMedia;
 use Illuminate\Http\Request;
 
 class MiscPageController extends Controller
@@ -83,5 +84,30 @@ class MiscPageController extends Controller
         );
 
         return back()->with(['success' => 'Contact Updated']);
+    }
+
+
+    public function socialSettingsView()
+    {
+        return view('pages.admin.misc.social-settings');
+    }
+
+    public function socialSettingsCreate(Request  $request)
+    {
+        $validated = $request->validate([
+            'facebook' => 'nullable|string',
+            'twitter' => 'nullable|string',
+            'instagram' => 'nullable|string',
+            'linkedin' => 'nullable|string',
+            'youtube' => 'nullable|string',
+        ]);
+
+        SocialMedia::updateOrCreate(
+            ['id' => 1], 
+            $validated
+        );
+
+        return back()->with(['success' => 'Social Media Updated']);
+
     }
 }
