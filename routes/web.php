@@ -73,6 +73,10 @@ Route::prefix('admin')->as('admin.')->middleware('isAdmin')->group(function () {
         Route::get('/social-settings', 'socialSettingsView')->name('social-settings');
         Route::post('/social-settings', 'socialSettingsCreate')->name('social-settings');
 
+        Route::get('/download-settings', 'downloadSettingsView')->name('download-settings');
+        Route::post('/download-settings', 'downloadSettingsCreate')->name('download-settings');
+
+
 
     });
 

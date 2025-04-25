@@ -6,6 +6,7 @@ use App\Helpers\FileUploader;
 use App\Http\Controllers\Controller;
 use App\Models\AboutPage;
 use App\Models\ContactPage;
+use App\Models\DownloadPdf;
 use App\Models\HomePage;
 use App\Models\SocialMedia;
 use Illuminate\Http\Request;
@@ -27,7 +28,7 @@ class MiscPageController extends Controller
         ]);
 
         if ($request->hasFile('image')) {
-            $validated['image'] = FileUploader::imageUpload(file: $request->file('image'), path: "images/misc");
+            $validated['image'] = FileUploader::upload(file: $request->file('image'), path: "images/misc");
         }
 
         HomePage::updateOrCreate(
@@ -50,7 +51,7 @@ class MiscPageController extends Controller
         ]);
 
         if ($request->hasFile('image')) {
-            $validated['image'] = FileUploader::imageUpload(file: $request->file('image'), path: "images/misc");
+            $validated['image'] = FileUploader::upload(file: $request->file('image'), path: "images/misc");
         }
 
         AboutPage::updateOrCreate(
@@ -66,7 +67,6 @@ class MiscPageController extends Controller
     public function contactSettingsView()
     {
         return view('pages.admin.misc.contact-settings');
-
     }
 
     public function contactSettingsCreate(Request $request)
@@ -103,11 +103,43 @@ class MiscPageController extends Controller
         ]);
 
         SocialMedia::updateOrCreate(
-            ['id' => 1], 
+            ['id' => 1],
             $validated
         );
 
         return back()->with(['success' => 'Social Media Updated']);
+    }
+
+
+    public function downloadSettingsView()
+    {
+        return view('pages.admin.misc.download-settings');
+    }
+
+    public function downloadSettingsCreate(Request $request)
+    {
+
+        $validated = $request->validate([
+            'business_proposal' => ['mimes:pdf'],
+            'referral_plan' => ['mimes:pdf'],
+            'trading_investment' => ['mimes:pdf'],
+            'terms_conditions' => ['mimes:pdf'],
+        ]);
+
+        foreach ($validated as $name => $file) {
+
+            if ($request->hasFile($name)) {
+
+                $validated[$name] = FileUploader::upload($request->file($name), 'pdfs');
+            }
+        }
+
+        DownloadPdf::updateOrCreate(
+            ['id' => 1],
+            $validated
+        );
+
+        return back()->with(['success' => 'Downloads Updated']);
 
     }
 }

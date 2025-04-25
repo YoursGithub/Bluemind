@@ -238,6 +238,9 @@
                                             <a href="{{ route('admin.social-settings') }}" key="t-register">Social Media </a>
                                         </li>
 
+                                        <li>
+                                            <a href="{{ route('admin.download-settings') }}" key="t-register">Downloads Section </a>
+                                        </li>
 
 
                                     </ul>

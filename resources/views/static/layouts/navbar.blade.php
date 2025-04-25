@@ -33,17 +33,13 @@
                             <li class="scrollspy-btn1">
                                 <a href="#">Downloads</a>
                                 <div class="dropdown-content">
-                                    <a class="dropdown-link" target="_blank"
-                                        href="https://firebasestorage.googleapis.com/v0/b/blue-mindglobal.appspot.com/o/Company%20Profile_compressed.pdf?alt=media&token=9865fac0-edd6-44e3-a46d-d25742eb4a3d">Business
+                                    <a class="dropdown-link" target="_blank" href="{{ $globalData->download?->business_proposal }}">Business
                                         Proposal</a>
-                                    <a class="dropdown-link" target="_blank"
-                                        href="https://firebasestorage.googleapis.com/v0/b/blue-mindglobal.appspot.com/o/Referral%20Plan_compressed.pdf?alt=media&token=a5855d7b-f8da-4675-9b99-ed2ae83be266">Referral
+                                    <a class="dropdown-link" target="_blank" href="{{ $globalData->download?->referral_plan }}">Referral
                                         Plan</a>
-                                    <a class="dropdown-link" target="_blank"
-                                        href="https://firebasestorage.googleapis.com/v0/b/blue-mindglobal.appspot.com/o/Trading%20Investment_compressed.pdf?alt=media&token=4eee2f96-148d-4fe6-98f7-a9d11a6ef10e">Trading
+                                    <a class="dropdown-link" target="_blank" href="{{ $globalData->download?->trading_investment }}">Trading
                                         Investment</a>
-                                    <a class="dropdown-link" target="_blank"
-                                        href="https://firebasestorage.googleapis.com/v0/b/blue-mindglobal.appspot.com/o/TERMS%20AND%20CONDITION.pdf?alt=media&token=eec83ee3-dae1-4336-884a-ed3ceb3e45f6">Terms
+                                    <a class="dropdown-link" target="_blank" href="{{ $globalData->download?->terms_conditions }}">Terms
                                         and Conditions</a>
                                 </div>
                             </li>
@@ -121,20 +117,16 @@
                                             <a class="scrollspy-btn" href="/about"><span>About</span></a>
                                         </li>
                                         <li class="menu-item">
-                                            <a class="scrollspy-btn"
-                                                href="/investment"><span>Investment</span></a>
+                                            <a class="scrollspy-btn" href="/investment"><span>Investment</span></a>
                                         </li>
                                         <li class="menu-item">
-                                            <a class="scrollspy-btn"
-                                                href="/roadmap"><span>Roadmap</span></a>
+                                            <a class="scrollspy-btn" href="/roadmap"><span>Roadmap</span></a>
                                         </li>
                                         <li>
-                                            <a class="scrollspy-btn"
-                                                href="/referrals"><span>Referrals</span></a>
+                                            <a class="scrollspy-btn" href="/referrals"><span>Referrals</span></a>
                                         </li>
                                         <li>
-                                            <a class="scrollspy-btn"
-                                                href="/referrals"><span>Gallery</span></a>
+                                            <a class="scrollspy-btn" href="/referrals"><span>Gallery</span></a>
                                         </li>
                                         <li> <a class="scrollspy-btn" target="_blank"
                                                 href="https://firebasestorage.googleapis.com/v0/b/blue-mindglobal.appspot.com/o/Company%20Profile_compressed.pdf?alt=media&token=9865fac0-edd6-44e3-a46d-d25742eb4a3d">Business
@@ -205,4 +197,3 @@
             </div>
         </div>
 </header>
-

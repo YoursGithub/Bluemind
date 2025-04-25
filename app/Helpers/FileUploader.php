@@ -13,7 +13,7 @@ class FileUploader
      * @param UploadedFile $file The uploaded file instance.
      * @return string The file path if successful.
      */
-    public static function imageUpload(UploadedFile $file ,  string $path = 'images')
+    public static function upload(UploadedFile $file ,  string $path = 'images')
     {
         $fileName = Str::uuid() . "-" . $file->getClientOriginalName();
         $file->move(public_path($path), $fileName);

@@ -28,8 +28,7 @@
                                 <div class="col-lg-12">
                                     <div class="xb-item--field">
                                         <span><img src="/assets/img/footer/contact-message.svg" alt=""></span>
-                                        <input type="text" id="message" placeholder="Type Your Message"
-                                            required>
+                                        <input type="text" id="message" placeholder="Type Your Message" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 form-check xb-item--checkbox">
@@ -147,27 +146,46 @@
                             </a>
                         </li>
                     </ul>
-                    <ul class="ul_li xb-item--social-link">
-                        <li><a target="_blank"
-                                href="https://www.facebook.com/share/S4r9LyM8ZFTuD3ym/?mibextid=qi2Omg"><i
-                                    class="fab fa-facebook-f"></i></a>
-                        </li>
-                        <li><a target="_blank" href="https://www.youtube.com/@BlueMindGlobal"><i
-                                    class="fab fa-youtube"></i></a>
-                        </li>
-                        <li><a target="_blank"
-                                href="https://www.linkedin.com/in/bluemind-global-a54776320?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BOTiAqeHuRBmUswb7KtxuJQ%3D%3D"><i
-                                    class="fab fa-linkedin"></i></a>
-                        </li>
-                        <li><a target="_blank" href="https://www.instagram.com/bluemind_global"><i
-                                    class="fab fa-instagram"></i></a>
-                        </li>
 
+
+
+                    @php
+
+                        $data = $globalData->social;
+
+                        $facebook = $data?->facebook;
+                        $youtube = $data?->youtube;
+                        $linkedin = $data?->linkedin;
+                        $instagram = $data?->instagram;
+
+                        $twitter = $data?->twitter;
+
+                    @endphp
+
+
+                    <ul class="ul_li xb-item--social-link">
+                        @if ($facebook)
+                            <li><a target="_blank" href="{{ $facebook }}"><i class="fab fa-facebook-f"></i></a></li>
+                        @endif
+
+                        @if ($youtube)
+                            <li><a target="_blank" href="{{ $youtube }}"><i class="fab fa-youtube"></i></a></li>
+                        @endif
+
+                        @if ($linkedin)
+                            <li><a target="_blank" href="{{ $linkedin }}"><i class="fab fa-linkedin"></i></a></li>
+                        @endif
+
+                        @if ($instagram)
+                            <li><a target="_blank" href="{{ $instagram }}"><i class="fab fa-instagram"></i></a></li>
+                        @endif
                     </ul>
+
+
                 </div>
                 <div class="xb-item--footer_widget-community mb-30">
                     <h3>Join Our Popular Community</h3>
-                    <a class="them-btn" target="_blank" href="https://x.com/@BluemindGlobal">
+                    <a class="them-btn" target="_blank" href="{{ $twitter }}">
                         <span class="btn_icon">
                             <img src="/assets/img/icon/discord-f-icon.svg" alt="">
                         </span>
