@@ -317,6 +317,14 @@
                                         <span key="t-dashboards">Share Referral </span>
                                     </a>
                                 </li>
+
+                                <li>
+                                    <a href="{{ route('user.profile') }}">
+                                        <i class="bx bx-user-circle"></i>
+                                        <span key="t-dashboards">Profile </span>
+                                    </a>
+                                </li>
+
                             @endif
 
 

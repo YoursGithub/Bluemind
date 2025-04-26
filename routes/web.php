@@ -200,6 +200,10 @@ Route::as('user.')->middleware(['auth', 'isVerified'])->group(function () {
         Route::get('/dashboard', 'dashboard')->name('dashboard');
 
         Route::get('/share-referral', 'shareReferralView')->name('shareReferral');
+
+        Route::get('/profile', 'profileView')->name('profile');
+        Route::post('/profile', 'profileUpdate')->name('profile');
+
     });
 });
 

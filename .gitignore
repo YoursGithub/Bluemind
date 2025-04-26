@@ -18,4 +18,6 @@ yarn-error.log
 /.vscode
 /public/images
 /public/pdfs
+/public/uploads
+
 

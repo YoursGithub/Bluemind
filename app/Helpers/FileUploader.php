@@ -15,6 +15,8 @@ class FileUploader
      */
     public static function upload(UploadedFile $file ,  string $path = 'images')
     {
+        $path = "uploads/$path";
+
         $fileName = Str::uuid() . "-" . $file->getClientOriginalName();
         $file->move(public_path($path), $fileName);
 
