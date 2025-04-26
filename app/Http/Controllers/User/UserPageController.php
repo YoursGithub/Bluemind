@@ -192,7 +192,9 @@ class UserPageController extends Controller
             $validated['profile_image'] = FileUploader::upload($request->file('profile_image'), 'profile_image');
         }
 
-        Auth::user()->update($validated);
+        /** @var \App\Models\User $user */
+        $user = Auth::user();
+        $user->update($validated);
 
         return back()->with(['success' => 'Profile Updated']);
     }
