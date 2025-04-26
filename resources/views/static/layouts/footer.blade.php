@@ -124,7 +124,7 @@
                         <li><a href="/contact">Contact Us</a></li>
                         <li><a href="/roadmap">Our Roadmap</a></li>
                         <li><a target="_blank"
-                                href="https://firebasestorage.googleapis.com/v0/b/blue-mind-global.appspot.com/o/Blue%20Mind%20Terms.pdf?alt=media&token=f480551a-67bf-430d-9a4f-212e0c7e9826">Terms
+                                href="/terms">Terms
                                 & Conditions</a>
                         </li>
                     </ul>

@@ -39,7 +39,7 @@
                                         Plan</a>
                                     <a class="dropdown-link" target="_blank" href="{{ $globalData->download?->trading_investment }}">Trading
                                         Investment</a>
-                                    <a class="dropdown-link" target="_blank" href="">Terms
+                                    <a class="dropdown-link" target="_blank" href="/terms">Terms
                                         and Conditions</a>
                                 </div>
                             </li>

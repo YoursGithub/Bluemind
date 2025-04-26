@@ -7,7 +7,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>About Us</title>
+    <title>Terms & Conditions</title>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script>
@@ -54,80 +54,33 @@
         <!-- main area start -->
         <section id="roadmap" class="roadmap pt-135">
             <div class="section-title pb-50">
-                <h1 class="title">About Blue Mind Global</h1>
-                <img src="{{ $globalData->about?->image }}" class="mt-30" alt="founder">
-                <h1 class="sub-heading">Mr Santosh karke </br> Founder & CEO </h1>
+                <h1 class="title">Terms & Conditions Blue Mind Global</h1>
+                {{-- <img src="{{ $globalData->about?->image }}" class="mt-30" alt="founder">
+                <h1 class="sub-heading">Mr Santosh karke </br> Founder & CEO </h1> --}}
             </div>
             <div class="intro-section">
                 <h1 class="intro-title">Welcome to BLUEMIND GLOBAL PVT. LTD.</h1>
+
+                @foreach ( $globalData->terms as $term )
+
+                @php
+                    $head = $term->heading ;
+                    $body = $term->body ;
+
+                @endphp
+                    
+
                 <div class="intro-text">
-                    <h2 class="sub-heading">Welcome</h2>
-                    <p>Where innovation meets opportunity in the dynamic world of cryptocurrency investments. Founded in
-                        2020, we are a pioneering firm dedicated to harnessing the potential of blockchain technology
-                        and
-                        digital assets to deliver exceptional investment returns for our clients.</p>
-                </div>
-                <div class="intro-text">
-                    <h2 class="sub-heading">Understanding the Market</h2>
-                    <p>At BLUEMIND GLOBAL, we understand that the cryptocurrency market is not just a trend but a
-                        transformative force reshaping global finance. With deep expertise in blockchain technology and
-                        a
-                        proven track record in investment management, our team navigates this complex landscape with
-                        precision and insight.</p>
-                </div>
-                <div class="intro-text">
-                    <h2 class="sub-heading">Our Mission and Vision</h2>
-                    <p>Our mission is to empower investors by providing them with cutting-edge tools, in-depth market
-                        analysis, and strategic insights that maximize their investment potential in the cryptocurrency
-                        space. We envision a future where digital assets and blockchain technology are integral to
-                        global
-                        finance, offering unparalleled opportunities for growth and innovation.</p>
-                </div>
-                <div class="intro-text">
-                    <h2 class="sub-heading">Expertise and Commitment</h2>
-                    <p>Our team of seasoned professionals is dedicated to staying at the forefront of technological
-                        advancements and market trends. We combine rigorous research, strategic planning, and advanced
-                        analytics to identify and capitalize on the most promising investment opportunities. Our
-                        commitment
-                        to excellence and client satisfaction drives everything we do.</p>
-                </div>
-                <div class="intro-text">
-                    <h2 class="sub-heading">Innovative Solutions</h2>
-                    <p>We pride ourselves on developing innovative solutions that meet the diverse needs of our clients.
-                        From portfolio management and market analysis to educational resources and customer support, we
-                        provide a comprehensive suite of services designed to help our clients succeed in the fast-paced
-                        world of cryptocurrency investments.</p>
-                </div>
-                <div class="intro-text">
-                    <h2 class="sub-heading">Community and Collaboration</h2>
-                    <p>At Blue Mind Global, we believe in fostering a community of like-minded investors who are
-                        passionate
-                        about the potential of blockchain technology. We encourage collaboration, knowledge sharing, and
-                        continuous learning to ensure our clients are well-equipped to make informed investment
-                        decisions.
+                    <h2 class="sub-heading">{{$head}}</h2>
+                    <p>
+                        {{ $body }}
                     </p>
                 </div>
-                <div class="intro-text">
-                    <h2 class="sub-heading">Global Reach</h2>
-                    <p>With a global perspective and a local presence, we are uniquely positioned to understand and
-                        navigate
-                        the intricacies of the cryptocurrency markets around the world. Our global reach allows us to
-                        offer
-                        our clients a diverse range of investment opportunities and a deep understanding of market
-                        dynamics.
-                    </p>
-                </div>
-                <div class="intro-text">
-                    <h2 class="sub-heading">Join Us on Our Journey</h2>
-                    <p>As we continue to grow and innovate, we invite you to join us on our journey to transform the
-                        world
-                        of finance through the power of blockchain technology and digital assets. Together, we can
-                        unlock
-                        new opportunities and achieve exceptional investment returns.</p>
-                    <p>Welcome to Blue Mind Global, where innovation meets opportunity, and where your investment
-                        journey
-                        begins.</p>
-                </div>
+
+                @endforeach
+
+        
+             
             </div>
             <style>
                 body {

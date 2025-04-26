@@ -265,6 +265,15 @@
                                         <span key="t-dashboards">Gallery Settings</span>
                                     </a>
                                 </li>
+
+
+                                <li>
+                                    <a href="{{ route('admin.all-terms') }}">
+                                        <i class="bx bx-user-circle"></i>
+                                        <span key="t-dashboards">Terms & Conditions </span>
+                                    </a>
+                                </li>
+
                             @else
                                 <li>
                                     <a href="{{ route('user.dashboard') }}">

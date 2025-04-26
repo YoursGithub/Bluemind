@@ -9,6 +9,7 @@ use App\Models\DownloadPdf;
 use App\Models\Gallery;
 use App\Models\HomePage;
 use App\Models\SocialMedia;
+use App\Models\TermsCondition;
 
 class GlobalData
 {
@@ -35,9 +36,7 @@ class GlobalData
 
         self::$data->gallery = Gallery::with('images')->get();
 
-
-
-
+        self::$data->terms = TermsCondition::all();
 
 
     }
