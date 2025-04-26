@@ -208,6 +208,13 @@
 
                                     </div>
 
+                                    <div class="row mb-4" style="margin: 20px 0">
+                                        <!-- PAN Card Upload -->
+                                        <label class="col-sm-3 col-form-label">Payment Screenshot</label>
+                                        <x-image-component  :name="'payment_screenshot'" :value="$kycDetails['payment_screenshot']" />
+
+                                    </div>
+
                                 
 
                                 <div class="row justify-content-end" style="margin: 100px 0;">

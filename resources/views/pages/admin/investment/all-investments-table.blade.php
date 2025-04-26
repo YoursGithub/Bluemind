@@ -38,9 +38,29 @@
 
                 </div>
 
+                @php
+
+                    $headings = ['Referrence Id', 'Name', 'Email', 'Amount', 'Currency', 'Investment Date'];
+
+                    $properties = [
+                        'payment_id',
+                        'user' => ['name'],
+                        'user' => ['email'],
+                        'amount',
+                        'currency',
+                        'created_at'
+                    ];
+
+                @endphp
+
                 <form method="POST" action="{{ route('admin.export-csv') }}">
                     @csrf
                     <input type="hidden" name="data" value="{{ json_encode($investments) }}">
+
+                    <input type="hidden" name="headings" value="{{ json_encode($headings) }}">
+
+                    <input type="hidden" name="properties" value="{{ json_encode($properties) }}">
+
                     <button type="submit" class="btn btn-sm btn-success">Export CSV</button>
                 </form>
 
