@@ -13,6 +13,7 @@ use App\Http\Controllers\User\EmailVerificationController;
 use App\Http\Controllers\User\UserAuthController;
 use App\Http\Controllers\User\UserKycController;
 use App\Http\Controllers\User\UserPageController;
+use App\Models\Gallery;
 use App\Models\ReferralCode;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -203,7 +204,6 @@ Route::as('user.')->middleware(['auth', 'isVerified'])->group(function () {
 
         Route::get('/profile', 'profileView')->name('profile');
         Route::post('/profile', 'profileUpdate')->name('profile');
-
     });
 });
 
@@ -223,4 +223,10 @@ Route::view('/investment', 'static.investment');
 Route::view('/roadmap', 'static.roadmap');
 Route::view('/promoters', 'static.referral');
 Route::view('/gallery', 'static.gallery');
-Route::view('/galleryview', 'static.galleryView');
+
+Route::get('/gallery/{id}', function (Gallery $id) {
+
+    $gallery = $id;
+
+    return view('static.gallery-view', compact('gallery'));
+});

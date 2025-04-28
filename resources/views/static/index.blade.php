@@ -451,7 +451,7 @@
                                     <div class="partner-name"
                                         style="font-size: 20px; font-weight: bold; color: #ffffff; margin: 10px 0; text-align: center;">
                                         {{ $name }}
-                                        Name
+                                        
                                     </div>
 
                                     <div class="partner-info"

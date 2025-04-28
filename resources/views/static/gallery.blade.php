@@ -168,7 +168,7 @@
                 grid-template-columns: repeat(2, 1fr);
                 gap: 20px;
             }
-            
+
             .gallery-item {
                 height: 250px;
             }
@@ -179,26 +179,26 @@
             .container {
                 padding: 0 15px;
             }
-            
+
             h1 {
                 font-size: 24px;
                 margin-bottom: 20px;
             }
-            
+
             .gallery-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 15px;
                 margin: 15px 0;
             }
-            
+
             .gallery-item {
                 height: 200px;
             }
-            
+
             .gallery-title {
                 font-size: 16px;
             }
-            
+
             .gallery-desc {
                 font-size: 13px;
             }
@@ -210,11 +210,11 @@
                 grid-template-columns: 1fr;
                 gap: 20px;
             }
-            
+
             .gallery-item {
                 height: 230px;
             }
-            
+
             /* Show description by default on mobile for better UX */
             .gallery-desc {
                 max-height: 100px;
@@ -223,17 +223,17 @@
                 font-size: 13px;
                 line-height: 1.4;
             }
-            
+
             .view-more {
                 opacity: 1;
                 transform: translateX(0);
             }
-            
+
             /* Enable touch-friendly interaction */
             .gallery-overlay {
                 background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 0.5) 70%, rgba(0, 0, 0, 0.3) 100%);
             }
-            
+
             .badge {
                 opacity: 1;
                 transform: translateY(0);
@@ -247,11 +247,11 @@
             h1 {
                 font-size: 22px;
             }
-            
+
             .gallery-item {
                 height: 200px;
             }
-            
+
             .gallery-title {
                 font-size: 15px;
             }
@@ -262,22 +262,22 @@
             .gallery-item:hover {
                 transform: none;
             }
-            
+
             .gallery-item:active {
                 transform: scale(0.98);
             }
-            
+
             .gallery-desc {
                 max-height: 100px;
                 opacity: 1;
                 margin-top: 8px;
             }
-            
+
             .view-more {
                 opacity: 1;
                 transform: translateX(0);
             }
-            
+
             .badge {
                 opacity: 1;
                 transform: translateY(0);
@@ -293,51 +293,26 @@
         <h1 style="margin-top: 40px;">Gallery</h1>
 
         <div class="gallery-grid">
-            <a href="/galleryview" class="gallery-item">
-                <div class="gallery-img" style="background-image: url('/assets/images/profile-img.png');"></div>
-                <div class="gallery-overlay">
-                    <div class="badge">Featured</div>
-                    <h3 class="gallery-title">Tokyo Investment Conference</h3>
-                    <p class="gallery-desc">Highlights from our annual global investment conference held in Tokyo</p>
-                    <span class="view-more">View Gallery <i class="fas fa-arrow-right"></i></span>
-                </div>
-            </a>
 
-            <a href="/galleryview" class="gallery-item">
-                <div class="gallery-img" style="background-image: url('/assets/images/profile-img.png');"></div>
-                <div class="gallery-overlay">
-                    <h3 class="gallery-title">New York Summit</h3>
-                    <p class="gallery-desc">Highlights from our annual global investment conference held in Tokyo</p>
-                    <span class="view-more">View Gallery <i class="fas fa-arrow-right"></i></span>
-                </div>
-            </a>
+            @foreach ($globalData->gallery as $gall)
+                @php
+                    $heading = $gall?->heading;
 
-            <a href="/galleryview" class="gallery-item">
-                <div class="gallery-img" style="background-image: url('/assets/images/profile-img.png');"></div>
-                <div class="gallery-overlay">
-                    <h3 class="gallery-title">London Investor Meet</h3>
-                    <p class="gallery-desc">Highlights from our annual global investment conference held in Tokyo</p>
-                    <span class="view-more">View Gallery <i class="fas fa-arrow-right"></i></span>
-                </div>
-            </a>
+                    $image = $gall?->images?->first()?->image_path;
 
-            <a href="/galleryview" class="gallery-item">
-                <div class="gallery-img" style="background-image: url('/assets/images/profile-img.png');"></div>
-                <div class="gallery-overlay">
-                    <h3 class="gallery-title">Dubai Financial Forum</h3>
-                    <p class="gallery-desc">Highlights from our annual global investment conference held in Tokyo</p>
-                    <span class="view-more">View Gallery <i class="fas fa-arrow-right"></i></span>
-                </div>
-            </a>
+                @endphp
 
-            <a href="/galleryview" class="gallery-item">
-                <div class="gallery-img" style="background-image: url('/assets/images/profile-img.png');"></div>
-                <div class="gallery-overlay">
-                    <h3 class="gallery-title">Singapore Exhibition</h3>
-                    <p class="gallery-desc">Highlights from our annual global investment conference held in Tokyo</p>
-                    <span class="view-more">View Gallery <i class="fas fa-arrow-right"></i></span>
-                </div>
-            </a>
+                <a href="/gallery/{{ $gall->id }}" class="gallery-item">
+                    <div class="gallery-img" style="background-image: url('{{ $image }}');"></div>
+                    <div class="gallery-overlay">
+
+                        <h3 class="gallery-title">{{ $heading }}</h3>
+                        {{-- <p class="gallery-desc">Highlights from our annual global investment conference held in Tokyo</p> --}}
+                        <span class="view-more">View Gallery <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            @endforeach
+
         </div>
     </div>
 
@@ -351,7 +326,7 @@
                 $(this).addClass('animate__animated animate__fadeIn');
                 $(this).css('animation-delay', `${i * 0.1}s`);
             });
-            
+
             // Handle touch devices differently
             if ('ontouchstart' in window || navigator.maxTouchPoints) {
                 $('.gallery-item').on('touchstart', function() {
@@ -363,20 +338,20 @@
         });
     </script>
 
-<script src="/assets/js/jquery-3.7.1.min.js"></script>
-<script src="/assets/js/bootstrap.bundle.min.js"></script>
-<script src="/assets/js/swiper.min.js"></script>
-<script src="/assets/js/wow.min.js"></script>
-<script src="/assets/js/appear.js"></script>
-<script src="/assets/js/odometer.min.js"></script>
-<script src="/assets/js/jquery.magnific-popup.min.js"></script>
-<script src="/assets/js/easing.min.js"></script>
-<script src="/assets/js/scrollspy.js"></script>
-<script src="/assets/js/countdown.js"></script>
-<script src="/assets/js/parallax-scroll.js"></script>
-<script src="/assets/js/main.js"></script>
-<!-- light mode -->
-<script src="/assets/js/theme.js"></script>
+    <script src="/assets/js/jquery-3.7.1.min.js"></script>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/swiper.min.js"></script>
+    <script src="/assets/js/wow.min.js"></script>
+    <script src="/assets/js/appear.js"></script>
+    <script src="/assets/js/odometer.min.js"></script>
+    <script src="/assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/js/easing.min.js"></script>
+    <script src="/assets/js/scrollspy.js"></script>
+    <script src="/assets/js/countdown.js"></script>
+    <script src="/assets/js/parallax-scroll.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <!-- light mode -->
+    <script src="/assets/js/theme.js"></script>
 
     <!-- footer would be included here in the actual implementation -->
 </body>
