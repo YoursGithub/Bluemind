@@ -20,4 +20,6 @@ yarn-error.log
 /public/pdfs
 /public/uploads
 
+.env
+
 

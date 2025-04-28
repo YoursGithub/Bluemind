@@ -82,5 +82,5 @@
     </div>
 @endsection
 @section('script-section')
-    <script src="/admin/js/image-script.js"></script>
+    <script src="/assets/admin/js/image-script.js"></script>
 @endsection
