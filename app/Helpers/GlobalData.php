@@ -9,6 +9,7 @@ use App\Models\DownloadPdf;
 use App\Models\Gallery;
 use App\Models\HomePage;
 use App\Models\SocialMedia;
+use App\Models\TeamMember;
 use App\Models\TermsCondition;
 
 class GlobalData
@@ -29,6 +30,8 @@ class GlobalData
         self::$data->contact = ContactPage::find(1);
 
         self::$data->branch = Branch::all();
+
+        self::$data->team = TeamMember::all();
 
         self::$data->social = SocialMedia::find(1);
 

@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\BranchController;
 use App\Http\Controllers\Admin\ExportController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\MiscPageController;
+use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\Admin\TermsController;
 use App\Http\Controllers\ForgetPasswordController;
 use App\Http\Controllers\User\EmailVerificationController;
@@ -118,6 +119,17 @@ Route::prefix('admin')->as('admin.')->middleware('isAdmin')->group(function () {
         Route::post('/create-branch', 'singleBranchCreate')->name('create-branch');
 
         Route::post('/delete-branch/{id}', 'singleBranchDelete')->name('delete-branch');
+    });
+
+
+    Route::controller(TeamController::class)->group(function () {
+
+        Route::get('/all-team-members', 'allTeamsView')->name('all-teams');
+
+        Route::get('/create-team-member', 'singleTeamView')->name('create-team');
+        Route::post('/create-team-member', 'singleTeamCreate')->name('create-team');
+
+        Route::post('/delete-team-member/{id}', 'singleTeamDelete')->name('delete-team');
     });
 
 

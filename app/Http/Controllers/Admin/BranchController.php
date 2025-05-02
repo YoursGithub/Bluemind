@@ -26,7 +26,7 @@ class BranchController extends Controller
             'name' => 'required|string',
             'designation' => 'required|string',
             'address'     => 'required|string',
-            'image'       => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            'image'       => 'required|image|mimes:jpeg,png,jpg',
         ]);
 
         $validated['image'] = FileUploader::upload($request->file('image'));

@@ -88,8 +88,6 @@
 
     <div class="toast-container" id="toastContainer"></div>
 
-    {{-- @dump(session()->all()) --}}
-
     <!-- <body data-layout="horizontal" data-topbar="dark"> -->
 
     <!-- Begin page -->
@@ -259,6 +257,15 @@
                                 </li>
 
 
+
+                                <li>
+                                    <a href="{{ route('admin.all-teams') }}">
+                                        <i class="bx bx-user-circle"></i>
+                                        <span key="t-dashboards">Team Settings</span>
+                                    </a>
+                                </li>
+
+
                                 <li>
                                     <a href="{{ route('admin.all-gallery') }}">
                                         <i class="bx bx-user-circle"></i>
@@ -366,10 +373,6 @@
 
     </div>
     <!-- END layout-wrapper -->
-
-
-
-
 
     <!-- JAVASCRIPT -->
 
