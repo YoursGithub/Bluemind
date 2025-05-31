@@ -97,7 +97,10 @@
                 <div class="col-lg-5 mt-30 pc-only">
                     <div class="testimonial-wrap bg_img" data-background="assets/img/bg/tm_bg.png">
                         <div class="xb-item--img mt-145">
-                            <img src="/assets/img/logo/Logo_new1.png" alt="">
+                            {{-- <img src="/assets/img/logo/Logo_new1.png" alt=""> --}}
+                            <center>
+                            <img src="/assets/img/logo-change.png" alt="">
+                            </center>
                         </div>
                     </div>
                 </div>

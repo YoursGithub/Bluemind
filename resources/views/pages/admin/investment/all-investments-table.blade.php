@@ -48,7 +48,7 @@
                         'user' => ['email'],
                         'amount',
                         'currency',
-                        'created_at'
+                        'created_at',
                     ];
 
                 @endphp
@@ -87,7 +87,9 @@
                                             <th>Amount</th>
                                             <th>Currecny</th>
                                             <th>Investment Date</th>
-                                            <th>Action</th>
+                                            <th>Edit</th>
+
+                                            <th>Delete</th>
 
                                         </tr>
                                     </thead>
@@ -118,6 +120,14 @@
                                                         class="btn btn-outline-secondary btn-sm edit" title="Edit">
                                                         <i class="fas fa-pencil-alt"></i>
                                                     </a>
+                                                </td>
+
+                                                <td>
+                                                    <a href="{{ route('admin.delete-model', ['model' => 'Investment', 'id' => $inv['id']]) }}"
+                                                        class="btn btn-outline-danger btn-sm delete" title="Delete">
+                                                        <i class="fas fa-trash-alt"></i>
+                                                    </a>
+
                                                 </td>
 
 

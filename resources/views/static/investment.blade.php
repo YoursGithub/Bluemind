@@ -69,12 +69,12 @@
                 <ul class="subtitle2">
                     <li><strong>Invest:</strong> Start with ₹1,000 for a three-year term.</li>
                     <li><strong>Trade:</strong> Our experts handle trading to ensure profitable outcomes.</li>
-                    <li><strong>Earn:</strong> Receive 60% of the profits from every successful trade.</li>
+                    <li><strong>Earn:</strong> Receive 60% of the profits from every successful trade , terms and condition applied.</li>
                 </ul>
                 <h3 class="subtitle">Projected Earnings</h3>
                 <p>With our expertise and market strategies, a ₹1,00,000 investment could potentially yield significant
                     returns. For instance, if we achieve a 100% profit per trade, your share would be 60%, equating to
-                    ₹60,000 per trade.</p>
+                    ₹60,000 per trade , terms and condition applied.</p>
             </div>
             <style>
                 .intro-image {

@@ -55,8 +55,8 @@
                                                 required>
                                                 <option value="" disabled selected>Please select a direction</option>
 
-                                                <option value="Buy Long">Buy Long</option>
-                                                <option value="Close Long">Close Long</option>
+                                                <option value="Buy Long">Profit</option>
+                                                <option value="Close Long">Loss</option>
 
 
                                             </select>
@@ -76,10 +76,10 @@
 
 
                                     <div class="row mb-4">
-                                        <label for="horizontal-amount-input" class="col-sm-3 col-form-label">Profit</label>
+                                        <label for="horizontal-amount-input" class="col-sm-3 col-form-label">Profit or Loss</label>
                                         <div class="col-sm-9">
                                             <input type="number" class="form-control" id="horizontal-amount-input"
-                                                placeholder="Enter  profit " name="profit">
+                                                placeholder="Enter profit or loss" name="profit">
                                         </div>
                                     </div>
 

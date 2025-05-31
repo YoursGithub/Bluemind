@@ -66,6 +66,22 @@ Route::prefix('admin')->as('admin.')->middleware('isAdmin')->group(function () {
 
     Route::post('/export-csv', [ExportController::class, 'export'])->name('export-csv');
 
+
+    Route::get('/delete/{model}/{id}', function ($model, $id) {
+
+        try {
+
+            $class = "\\App\\Models\\$model";
+
+            $class::destroy($id);
+            return redirect()->back()->with('success', 'Record deleted successfully');
+        } catch (\Throwable $th) {
+            return redirect()->back()->withErrors(['error' => 'Model not found']);
+        }
+    })->name('delete-model');
+
+
+
     Route::controller(GalleryController::class)->group(function () {
 
         Route::get('/all-gallery', 'allGalleryView')->name('all-gallery');

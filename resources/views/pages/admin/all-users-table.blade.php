@@ -77,6 +77,8 @@
                                             <th>Start date</th>
                                             <th>Edit</th>
 
+                                            <th>Delete</th>
+
                                         </tr>
                                     </thead>
 
@@ -126,6 +128,15 @@
                                                         <i class="fas fa-pencil-alt"></i>
                                                     </a>
                                                 </td>
+
+                                                 <td>
+                                                    <a href="{{ route('admin.delete-model',['model'=>'User', 'id'=>$user['id']]) }}"
+                                                        class="btn btn-outline-danger btn-sm delete" title="Delete">
+                                                        <i class="fas fa-trash-alt"></i>
+                                                    </a>
+                                                   
+                                                </td>
+
                                             </tr>
                                         @endforeach
 

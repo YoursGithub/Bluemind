@@ -46,7 +46,7 @@
 
 
                                     <div class="mb-4">
-                                        <label class="form-label">Trading Investment :</label>
+                                        <label class="form-label">Leagal Documentsz :</label>
                                         <input type="file" name="trading_investment" accept="application/pdf"
                                             class="form-control pdf-input">
                                         <iframe src="{{ $data?->trading_investment }}" class="pdf-preview w-100 border mt-2"

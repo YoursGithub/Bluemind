@@ -53,8 +53,8 @@
                                         <select name="direction" class="form-control" id="horizontal-user-input"
                                             required>
 
-                                            <option value="Buy Long" {{ $transac->direction == "Buy Long" ? "selected" : "" }}>Buy Long</option>
-                                            <option value="Close Long"  {{ $transac->direction == "Close Long" ? "selected" : "" }}>Close Long</option>
+                                            <option value="Buy Long" {{ $transac->direction == "Buy Long" ? "selected" : "" }}>Profit</option>
+                                            <option value="Close Long"  {{ $transac->direction == "Close Long" ? "selected" : "" }}>Loss</option>
 
 
                                         </select>
@@ -74,10 +74,10 @@
 
 
                                 <div class="row mb-4">
-                                    <label for="horizontal-amount-input" class="col-sm-3 col-form-label">Profit</label>
+                                    <label for="horizontal-amount-input" class="col-sm-3 col-form-label">Profit or Loss</label>
                                     <div class="col-sm-9">
                                         <input type="number" class="form-control" id="horizontal-amount-input"
-                                            placeholder="Enter  profit " name="profit" value="{{ $transac->profit }}">
+                                            placeholder="Enter  profit or loss " name="profit" value="{{ $transac->profit }}">
                                     </div>
                                 </div>
 
