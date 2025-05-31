@@ -51,10 +51,10 @@
         @include('static.layouts.navbar')
         <!-- header end -->
         <section id="roadmap" class="roadmap pt-135">
-            <div class="section-title pb-50">
+            <div class="section-title pb-50 text-center">
                 <h1 class="title">Investment Policies</h1>
                 <img src="/assets/img/bg/INVESTMENT.jpg" alt="Blue Mind Global" class="intro-image mt-40"
-                    style="padding-left: 130px; padding-right: 130px;">
+                     style="width: 100%; max-width: 600px; height: auto; padding-left: 15px; padding-right: 15px;">
             </div>
 
             <div class="investment-section">
@@ -67,14 +67,14 @@
                     provide:</p>
                 <h3 class="subtitle">How It Works</h3>
                 <ul class="subtitle2">
-                    <li><strong>Invest:</strong> Start with ₹1,00,000 for a one-year term.</li>
+                    <li><strong>Invest:</strong> Start with ₹1,000 for a three-year term.</li>
                     <li><strong>Trade:</strong> Our experts handle trading to ensure profitable outcomes.</li>
-                    <li><strong>Earn:</strong> Receive 50% of the profits from every successful trade.</li>
+                    <li><strong>Earn:</strong> Receive 60% of the profits from every successful trade.</li>
                 </ul>
                 <h3 class="subtitle">Projected Earnings</h3>
                 <p>With our expertise and market strategies, a ₹1,00,000 investment could potentially yield significant
-                    returns. For instance, if we achieve a 20% profit per trade, your share would be 10%, equating to
-                    ₹10,000 per trade.</p>
+                    returns. For instance, if we achieve a 100% profit per trade, your share would be 60%, equating to
+                    ₹60,000 per trade.</p>
             </div>
             <style>
                 .intro-image {

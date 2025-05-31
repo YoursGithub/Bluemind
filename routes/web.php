@@ -235,6 +235,7 @@ Route::view('/investment', 'static.investment');
 Route::view('/roadmap', 'static.roadmap');
 Route::view('/promoters', 'static.referral');
 Route::view('/gallery', 'static.gallery');
+Route::view('/projects', 'static.projects');
 
 Route::get('/gallery/{id}', function (Gallery $id) {
 

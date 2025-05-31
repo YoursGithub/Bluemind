@@ -22,7 +22,7 @@
                                 <a class="scrollspy-btn" href="/roadmap"><span>Roadmap</span></a>
                             </li>
                             <li>
-                                <a class="scrollspy-btn" href="/promoters"><span>Promoter</span></a>
+                                <a class="scrollspy-btn" href="/projects"><span>Projects</span></a>
                             </li>
                             <li>
                                 <a class="scrollspy-btn" href="/gallery"><span>Gallery</span></a>
@@ -37,10 +37,8 @@
                                         Proposal</a>
                                     <a class="dropdown-link" target="_blank" href="{{ $globalData->download?->referral_plan }}">Referral
                                         Plan</a>
-                                    <a class="dropdown-link" target="_blank" href="{{ $globalData->download?->trading_investment }}">Trading
-                                        Investment</a>
-                                    <a class="dropdown-link" target="_blank" href="/terms">Terms
-                                        and Conditions</a>
+                                    <a class="dropdown-link" target="_blank" href="{{ $globalData->download?->trading_investment }}">Legal Documents</a>
+                                    
                                 </div>
                             </li>
 
@@ -123,23 +121,22 @@
                                             <a class="scrollspy-btn" href="/roadmap"><span>Roadmap</span></a>
                                         </li>
                                         <li>
-                                            <a class="scrollspy-btn" href="/referrals"><span>Referrals</span></a>
+                                            <a class="scrollspy-btn" href="/projects"><span>Projects</span></a>
                                         </li>
                                         <li>
-                                            <a class="scrollspy-btn" href="/referrals"><span>Gallery</span></a>
+                                            <a class="scrollspy-btn" href="/gallery"><span>Gallery</span></a>
                                         </li>
-                                        <li> <a class="scrollspy-btn" target="_blank"
-                                                href="https://firebasestorage.googleapis.com/v0/b/blue-mindglobal.appspot.com/o/Company%20Profile_compressed.pdf?alt=media&token=9865fac0-edd6-44e3-a46d-d25742eb4a3d">Business
-                                                Proposal</a> </li>
-                                        <li><a class="scrollspy-btn" target="_blank"
-                                                href="https://firebasestorage.googleapis.com/v0/b/blue-mindglobal.appspot.com/o/Referral%20Plan_compressed.pdf?alt=media&token=a5855d7b-f8da-4675-9b99-ed2ae83be266">Referral
-                                                Plan</a> </li>
-                                        <li><a class="scrollspy-btn" target="_blank"
-                                                href="https://firebasestorage.googleapis.com/v0/b/blue-mindglobal.appspot.com/o/Trading%20Investment_compressed.pdf?alt=media&token=4eee2f96-148d-4fe6-98f7-a9d11a6ef10e">Trading
-                                                Investment</a> </li>
-                                        <li><a class="scrollspy-btn" target="_blank"
-                                                href="https://firebasestorage.googleapis.com/v0/b/blue-mindglobal.appspot.com/o/TERMS%20AND%20CONDITION.pdf?alt=media&token=eec83ee3-dae1-4336-884a-ed3ceb3e45f6">Terms
-                                                and Conditions</a> </li>
+                             <li class="scrollspy-btn1">
+                                <a href="#">Downloads</a>
+                                <div class="dropdown-content">
+                                    <a class="dropdown-link" target="_blank" href="{{ $globalData->download?->business_proposal }}">Business
+                                        Proposal</a>
+                                    <a class="dropdown-link" target="_blank" href="{{ $globalData->download?->referral_plan }}">Referral
+                                        Plan</a>
+                                    <a class="dropdown-link" target="_blank" href="{{ $globalData->download?->trading_investment }}">Legal Documents</a>
+                                    
+                                </div>
+                            </li>
                                         <li>
                                             <a href="/contact"><span>Contact Us</span></a>
                                         </li>
@@ -189,10 +186,12 @@
 
 
                     <div class="header-bar-mobile side-menu d-lg-none ml-20">
-                        <div class="xb-nav-mobile-container">
-                            <a class="xb-nav-mobile" href="javascript:void(0);"><i class="far fa-bars"></i></a>
+                            <div class="xb-nav-mobile-container">
+                                <a class="xb-nav-mobile" href="javascript:void(0);">
+                                    <i class="fas fa-bars" style="color: white !important; font-size: 24px;"></i>
+                                </a>
+                            </div>
                         </div>
-                    </div>
                 </div>
             </div>
         </div>

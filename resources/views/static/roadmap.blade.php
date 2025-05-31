@@ -54,7 +54,8 @@
                 <h1 class="title">Our Road map</h1>
 
                 <img src="/assets/img/bg/ROADMAP.jpg" alt="Blue Mind Global" class="intro-image mt-30"
-                    style="padding-left: 130px; padding-right: 130px;">
+     style="width: 100%; max-width: 600px; height: auto; padding-left: 15px; padding-right: 15px; display: block; margin-left: auto; margin-right: auto;">
+
             </div>
             <div class="roadmap-wrap">
                 <div class="roadmap--top">

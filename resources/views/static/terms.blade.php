@@ -54,12 +54,12 @@
         <!-- main area start -->
         <section id="roadmap" class="roadmap pt-135">
             <div class="section-title pb-50">
-                <h1 class="title">Terms & Conditions Blue Mind Global</h1>
+                <h1 class="title">Terms & Conditions</h1>
                 {{-- <img src="{{ $globalData->about?->image }}" class="mt-30" alt="founder">
-                <h1 class="sub-heading">Mr Santosh karke </br> Founder & CEO </h1> --}}
+                <h1 class="sub-heading">Mr Santosh Karke </br> Founder & CEO </h1> --}}
             </div>
             <div class="intro-section">
-                <h1 class="intro-title">Welcome to BLUEMIND GLOBAL PVT. LTD.</h1>
+                <!--<h1 class="intro-title">Welcome to BLUEMIND GLOBAL PVT. LTD.</h1>-->
 
                 @foreach ( $globalData->terms as $term )
 

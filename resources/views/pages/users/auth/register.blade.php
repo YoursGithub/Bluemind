@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="shortcut icon" href="/assets/img/favicon.png" type="image/x-icon" />
     <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
 </head>
 
 <style>
@@ -19,13 +21,48 @@
     }
 </style>
 
+<style>
+    .text-field {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  width: 100%;
+  padding-right: 40px; /* Space for icon */
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.toggle-eye {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #666;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+  display: none; /* Show only when validation fails */
+}
+
+</style>
+
 <body>
     <div class="form-wrapper">
         <main class="form-side">
-            <a href="index.html" title="Logo">
+            <a href="./" title="Logo">
                 <img src="/assets/signup/logo.svg" alt="Laplace Logo" class="logo">
             </a>
-
+<br>
             
             <form class="my-form" id="signupForm" action="{{ route('register') }}" method="POST">
                 <div class="form-welcome-row">
@@ -68,15 +105,27 @@
                     <input type="tel" id="signupPhoneNumber" name="phone"  placeholder="Enter your phone number" required>
                     <div class="error-message">Invalid phone number</div>
                 </div>
-                <div class="text-field">
-                    <label for="password">Password</label>
-                    <input id="signupPassword" type="password" name="password" placeholder="Your password" title="Minimum 6 characters, at least 1 letter and 1 number">
-                </div>
-                <div class="text-field">
-                    <label for="confirm-password">Confirm Password</label>
-                    <input id="signupConfirmPassword" type="password" name="password_confirmation" placeholder="Confirm your password" required>
-                    <div class="error-message">Passwords do not match</div>
-                </div>
+<div class="text-field">
+    <label for="password">Password</label>
+    <div class="password-wrapper">
+        <input id="signupPassword" type="password" name="password" placeholder="Your password" title="Minimum 6 characters, at least 1 letter and 1 number">
+        <span class="toggle-eye" onclick="toggleVisibility('signupPassword', 'eye1')">
+            <i id="eye1" class="fa-solid fa-eye"></i>
+        </span>
+    </div>
+    <div class="error-message">Minimum 6 characters, at least 1 letter and 1 number</div>
+</div>
+
+<div class="text-field">
+    <label for="confirm-password">Confirm Password</label>
+    <div class="password-wrapper">
+        <input id="signupConfirmPassword" type="password" name="confirm-password" placeholder="Confirm your password" required>
+        <span class="toggle-eye" onclick="toggleVisibility('signupConfirmPassword', 'eye2')">
+            <i id="eye2" class="fa-solid fa-eye"></i>
+        </span>
+    </div>
+    <div class="error-message">Passwords do not match</div>
+</div>
                
                 <div style="margin-top: 15px; display: flex">
                     <input style="margin-right: 10px;" id="hasReferralCode" type="checkbox" name="referral-checkbox" onclick="toggleReferralCodeField()">
@@ -111,7 +160,23 @@
             </div>
         </aside>
     </div>
+<script>
+    function toggleVisibility(inputId, iconId) {
+  const input = document.getElementById(inputId);
+  const icon = document.getElementById(iconId);
 
+  if (input.type === "password") {
+    input.type = "text";
+    icon.classList.remove("fa-eye");
+    icon.classList.add("fa-eye-slash");
+  } else {
+    input.type = "password";
+    icon.classList.remove("fa-eye-slash");
+    icon.classList.add("fa-eye");
+  }
+}
+
+</script>
     <script>
         function toggleReferralCodeField() {
             var referralCodeField = document.getElementById("referral-code-field");

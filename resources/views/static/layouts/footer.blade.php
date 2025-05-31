@@ -132,7 +132,6 @@
                 <div class="xb-item--footer_widget mb-30">
                     <span>Solution</span>
                     <ul class="xb-item--footer_widget-list">
-                        <li><a href="/roadmap">Trading</a></li>
                         <li><a href="/investment">Investment</a></li>
                         <li><a href="#features">Security</a></li>
                         <li><a href="/contact">Support</a></li>
@@ -141,7 +140,7 @@
                 <div class="xb-item--footer_widget mb-30">
                     <span>Need Help?</span>
                     <ul class="xb-item--footer_widget-list">
-                        <li><a href="tel:+918182467450">+(91) 8182-467450</a></li>
+                        <li><a href="tel:+918182454267">+(91) 8182-454267</a></li>
                         <li class="underline"><a href="mailto:bluemindglobal@gmail.com">bluemindglobal@gmail.com
                             </a>
                         </li>

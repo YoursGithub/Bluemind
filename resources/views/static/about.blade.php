@@ -56,20 +56,20 @@
             <div class="section-title pb-50">
                 <h1 class="title">About Blue Mind Global</h1>
                 <img src="{{ $globalData->about?->image }}" class="mt-30" alt="founder">
-                <h1 class="sub-heading">Mr Santosh karke </br> Founder & CEO </h1>
+                <h1 class="sub-heading">Mr Santhosh M </br>Founder & CEO</h1>
             </div>
             <div class="intro-section">
                 <h1 class="intro-title">Welcome to BLUEMIND GLOBAL PVT. LTD.</h1>
                 <div class="intro-text">
                     <h2 class="sub-heading">Welcome</h2>
                     <p>Where innovation meets opportunity in the dynamic world of cryptocurrency investments. Founded in
-                        2020, we are a pioneering firm dedicated to harnessing the potential of blockchain technology
+                        2019, we are a pioneering firm dedicated to harnessing the potential of blockchain technology
                         and
                         digital assets to deliver exceptional investment returns for our clients.</p>
                 </div>
                 <div class="intro-text">
                     <h2 class="sub-heading">Understanding the Market</h2>
-                    <p>At BLUEMIND GLOBAL, we understand that the cryptocurrency market is not just a trend but a
+                    <p>At BLUEMIND GLOBAL PVT. LTD., we understand that the cryptocurrency market is not just a trend but a
                         transformative force reshaping global finance. With deep expertise in blockchain technology and
                         a
                         proven track record in investment management, our team navigates this complex landscape with

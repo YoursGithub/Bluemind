@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="shortcut icon" href="/assets/img/favicon.png" type="images/x-icon" />
     <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
 
 </head>
 
@@ -19,7 +21,40 @@
         cursor: pointer;
     }
 </style>
+<style>
+    .text-field {
+  margin-bottom: 20px;
+  position: relative;
+}
 
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  width: 100%;
+  padding-right: 40px; /* Space for icon */
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.toggle-eye {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #666;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+  display: none; /* Show only when validation fails */
+}
+
+</style>
 <body>
     <div class="form-wrapper">
         <main class="form-side">
@@ -59,11 +94,15 @@
                     <input type="email" id="loginEmail" name="email" autocomplete="off" placeholder="you@example.com"
                         required>
                 </div>
-                <div class="text-field">
-                    <label for="password">Password</label>
-                    <input id="loginPassword" type="password" name="password" placeholder="Your password" >
-   
-                </div>
+<div class="text-field">
+    <label for="loginPassword">Password</label>
+    <div class="password-wrapper">
+        <input id="loginPassword" type="password" name="password" placeholder="Your password">
+        <span class="toggle-eye" onclick="toggleVisibility('loginPassword', 'eye-login')">
+            <i id="eye-login" class="fa-solid fa-eye"></i>
+        </span>
+    </div>
+</div>
                 <div id="referral-code-field">
                     <div class="text-field">
                         <label for="referral-code">Referral Code</label>
@@ -98,7 +137,23 @@
             </div>
         </aside>
     </div>
+<script>
+    function toggleVisibility(inputId, iconId) {
+  const input = document.getElementById(inputId);
+  const icon = document.getElementById(iconId);
 
+  if (input.type === "password") {
+    input.type = "text";
+    icon.classList.remove("fa-eye");
+    icon.classList.add("fa-eye-slash");
+  } else {
+    input.type = "password";
+    icon.classList.remove("fa-eye-slash");
+    icon.classList.add("fa-eye");
+  }
+}
+
+</script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const lottiePlayer = document.getElementById("signupAnimation");

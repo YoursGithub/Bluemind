@@ -141,7 +141,7 @@
                     </div>
                     <div class="card">
                         <img src="/assets/img/shape/3.svg" alt="">
-                        <p class="card-subtitle"><span class="highlight">50%</span> Profit on Trading</p>
+                        <p class="card-subtitle"><span class="highlight">60%</span> Profit on Trading</p>
                     </div>
                     <div class="card">
                         <img src="/assets/img/shape/2.svg" alt="">
@@ -182,7 +182,6 @@
                 .content {
                     max-width: 100%;
                     position: relative;
-                    z-index: 10;
                     text-align: left;
                     padding: 20px;
                 }
@@ -270,7 +269,7 @@
                     padding-right: 30px;
 
                     margin-top: 3rem;
-                    z-index: 10;
+                    /* z-index: 10; */
                     box-sizing: border-box;
                 }
 
@@ -381,19 +380,12 @@
                         <div class="swiper-slide">
                             <div class="xb-item--brand">
                                 <div class="xb-item--brand_logo">
-                                    <img src="/assets/img/partner/Gateio.png" alt="">
+                                    <img src="/assets/img/partner/coindcx.png" alt="">
                                 </div>
-                                <span>Gate Io</span>
+                                <span>CoinDCX</span>
                             </div>
                         </div>
-                        <div class="swiper-slide">
-                            <div class="xb-item--brand">
-                                <div class="xb-item--brand_logo">
-                                    <img src="/assets/img/partner/MEXC.png" alt="">
-                                </div>
-                                <span>MEXC</span>
-                            </div>
-                        </div>
+                 
                         <div class="swiper-slide">
                             <div class="xb-item--brand">
                                 <div class="xb-item--brand_logo">
@@ -423,56 +415,49 @@
                         <span><img src="/assets/img/partner/partner_07.png" alt=""> Our Team Members <img
                                 src="/assets/img/partner/partner_08.png" alt=""></span>
                     </div>
-                    <div class="partner-active partner-slider ul_li">
-                        <div class="swiper-wrapper" style="margin-left: 20px;">
+                    <div class="partner-active partner-slider ul_li" style="overflow-x: auto;">
+        <div class="swiper-wrapper"
+        style="display: flex; gap: 20px; padding: 0 10px 20px 10px; flex-wrap: nowrap;">
+   
+            @foreach ($globalData->team as $team)
+                @php
+                    $name = $team?->name;
+                    $designation = $team?->designation;
+                    $image = $team?->image;
+                @endphp
 
-                            @foreach ($globalData->team as $team)
-                                @php
-                                    $name = $team?->name;
-                                    $designation = $team?->designation;
-                                    $image = $team?->image;
+                <div class="swiper-slide"
+                    style="flex: 0 0 auto; width: 85vw; max-width: 280px; min-width: 240px; height: 250px; border-radius: 12px; overflow: hidden; font-family: Arial, sans-serif; background: linear-gradient(135deg, #141b31 0%, #0a0e1a 100%); box-shadow: 0 8px 24px rgba(0,0,0,0.3); position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: transform 0.3s ease, box-shadow 0.3s ease;"
+                    onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 28px rgba(0,0,0,0.4)';"
+                    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 24px rgba(0,0,0,0.3)';">
 
-                                @endphp
-
-
-
-                                <div class="swiper-slide">
-                                    <div class="partner-card"
-                                        style="width: 280px; height: 250px; border-radius: 12px; overflow: hidden; font-family: Arial, sans-serif; background: linear-gradient(135deg, #141b31 0%, #0a0e1a 100%); box-shadow: 0 8px 24px rgba(0,0,0,0.3); position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: transform 0.3s ease, box-shadow 0.3s ease;"
-                                        onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 28px rgba(0,0,0,0.4)';"
-                                        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 24px rgba(0,0,0,0.3)';">
-
-                                        <div class="partner-logo"
-                                            style="width: 100%; height: 120px; display: flex; justify-content: center; align-items: center; margin-bottom: 5px;">
-                                            <img src="{{ $image }}" alt="Binance Logo"
-                                                style="max-width: 120px; max-height: 100px; object-fit: contain;">
-                                        </div>
-
-                                        <div class="partner-name"
-                                            style="font-size: 20px; font-weight: bold; color: #ffffff; margin: 10px 0; text-align: center;">
-                                            {{ $name }}
-
-                                        </div>
-
-                                        <div class="partner-info"
-                                            style="font-size: 12px; color: #8a8d98; text-align: center; line-height: 1.4; width: 85%; margin-bottom: 10px;">
-                                            <div style="margin-bottom: 5px; color: #00b4ff;">
-                                                {{ $designation }}
-                                            </div>
-
-                                        </div>
-
-                                        <div
-                                            style="position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, #00b4ff, #2b6aff); opacity: 0.8;">
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
+                    <div class="partner-logo"
+     style="width: 100px; height: 100px; display: flex; justify-content: center; align-items: center; overflow: hidden; border-radius: 12px; background-color: #1a223a;">
+    <img src="{{ $image }}" alt="{{ $name }} Logo"
+         style="width: 100%; height: 100%; object-fit: cover;">
+</div>
 
 
+                    <div class="partner-name"
+                        style="font-size: 18px; font-weight: bold; color: #ffffff; margin: 10px 0; text-align: center;">
+                        {{ $name }}
+                    </div>
 
+                    <div class="partner-info"
+                        style="font-size: 12px; color: #8a8d98; text-align: center; line-height: 1.4; width: 85%; margin-bottom: 10px;">
+                        <div style="margin-bottom: 5px; color: #00b4ff;">
+                            {{ $designation }}
                         </div>
                     </div>
+
+                    <div
+                        style="position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, #00b4ff, #2b6aff); opacity: 0.8;">
+                    </div>
+                </div>
+            @endforeach
+
+        </div>
+    </div>
                 </section>
 
             @endempty
@@ -483,61 +468,54 @@
             
             <section class="partners z-3 pt-135">
                 <div class="patners-title text-center">
-
-                    <span><img src="/assets/img/partner/partner_07.png" alt=""> Our Branches <img
-                            src="/assets/img/partner/partner_08.png" alt=""></span>
+                    <span>
+                        <img src="/assets/img/partner/partner_07.png" alt="">
+                        Our Branches
+                        <img src="/assets/img/partner/partner_08.png" alt="">
+                    </span>
                 </div>
-                <div class="partner-active partner-slider ul_li">
-                    <div class="swiper-wrapper" style="margin-left: 20px;">
-
+            
+                <div class="partner-active partner-slider ul_li" style="overflow-x: auto;">
+                    <div class="swiper-wrapper"
+                         style="display: flex; gap: 20px; padding: 0 10px 20px 10px; flex-wrap: nowrap;">
+            
                         @foreach ($globalData->branch as $branch)
                             @php
                                 $name = $branch?->name;
                                 $designation = $branch?->designation;
                                 $address = $branch?->address;
                                 $image = $branch?->image;
-
                             @endphp
-
-
-
-                            <div class="swiper-slide">
-                                <div class="partner-card"
-                                    style="width: 280px; height: 250px; border-radius: 12px; overflow: hidden; font-family: Arial, sans-serif; background: linear-gradient(135deg, #141b31 0%, #0a0e1a 100%); box-shadow: 0 8px 24px rgba(0,0,0,0.3); position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: transform 0.3s ease, box-shadow 0.3s ease;"
-                                    onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 28px rgba(0,0,0,0.4)';"
-                                    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 24px rgba(0,0,0,0.3)';">
-
-                                    <div class="partner-logo"
-                                        style="width: 100%; height: 120px; display: flex; justify-content: center; align-items: center; margin-bottom: 5px;">
-                                        <img src="{{ $image }}" alt="Binance Logo"
-                                            style="max-width: 120px; max-height: 100px; object-fit: contain;">
+            
+                            <div class="swiper-slide"
+                                 style="flex: 0 0 auto; width: 85vw; max-width: 280px; min-width: 240px; height: 250px; border-radius: 12px; overflow: hidden; font-family: Arial, sans-serif; background: linear-gradient(135deg, #141b31 0%, #0a0e1a 100%); box-shadow: 0 8px 24px rgba(0,0,0,0.3); position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: transform 0.3s ease, box-shadow 0.3s ease;"
+                                 onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 28px rgba(0,0,0,0.4)';"
+                                 onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 24px rgba(0,0,0,0.3)';">
+            
+                                <div class="partner-logo"
+                                     style="width: 100%; height: 120px; display: flex; justify-content: center; align-items: center; margin-bottom: 5px;">
+                                    <img src="{{ $image }}" alt="{{ $name }} Logo"
+                                         style="max-width: 100px; max-height: 100px; object-fit: contain;">
+                                </div>
+            
+                                <div class="partner-name"
+                                     style="font-size: 18px; font-weight: bold; color: #ffffff; margin: 10px 0; text-align: center;">
+                                    {{ $name }}
+                                </div>
+            
+                                <div class="partner-info"
+                                     style="font-size: 12px; color: #8a8d98; text-align: center; line-height: 1.4; width: 85%; margin-bottom: 10px;">
+                                    <div style="margin-bottom: 5px; color: #00b4ff;">
+                                        {{ $designation }}
                                     </div>
-
-                                    <div class="partner-name"
-                                        style="font-size: 20px; font-weight: bold; color: #ffffff; margin: 10px 0; text-align: center;">
-                                        {{ $name }}
-
-                                    </div>
-
-                                    <div class="partner-info"
-                                        style="font-size: 12px; color: #8a8d98; text-align: center; line-height: 1.4; width: 85%; margin-bottom: 10px;">
-                                        <div style="margin-bottom: 5px; color: #00b4ff;">
-                                            {{ $designation }}
-                                        </div>
-
-                                        <div>{{ $address }}</div>
-                                        {{-- <div>Singapore 049908</div> --}}
-                                    </div>
-
-                                    <div
-                                        style="position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, #00b4ff, #2b6aff); opacity: 0.8;">
-                                    </div>
+                                    <div>{{ $address }}</div>
+                                </div>
+            
+                                <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, #00b4ff, #2b6aff); opacity: 0.8;">
                                 </div>
                             </div>
                         @endforeach
-
-
-
+            
                     </div>
                 </div>
             </section>
@@ -635,7 +613,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="about-wrap pt-140 wow fadeInLeft" data-wow-duration=".7s">
-                                <h2 class="xb-item--title">What is Bluemind Global?</h2>
+                                <h2 class="xb-item--title">What is BLUEMIND GLOBAL PVT. LTD.?</h2>
                                 <p class="xb-item--content">
                                     Welcome to BLUEMIND GLOBAL, where innovation meets opportunity in the dynamic world
                                     of cryptocurrency investments. Founded in 2019, we are a pioneering firm dedicated
@@ -644,7 +622,7 @@
                                 </p>
                                 <h3 class="xb-item--title xb-item--title1">Ingenious Methodologies</h3>
                                 <p class="xb-item--content xb-item--content1">
-                                    <br> At BLUEMIND GLOBAL, we understand that the cryptocurrency market is not just a
+                                    <br> At BLUEMIND GLOBAL PVT. LTD., we understand that the cryptocurrency market is not just a
                                     trend but a transformative force reshaping global finance. With deep expertise in
                                     blockchain technology and a proven track record in investment management, our team
                                     navigates this complex landscape with precision and insight.
@@ -972,7 +950,7 @@
                         </div>
                         <div class="container">
                             <div class="section-title pb-55 text-center">
-                                <h1 class="title">The best crypto based investment platform & we operate in stages
+                                <h1 class="title">The best crypto based Trading investment platform & we operate in stages
                                 </h1>
                             </div>
                             <div class="row align-items-start">
@@ -1001,9 +979,9 @@
                                                     data-background="assets/img/feature/feature-col-bg1.svg">
                                                     <div class="xb-item--holder">
                                                         <h2 class="xb-item--title">Initial Investment & Timeframe</h2>
-                                                        <p class="xb-item--content"> Invest by starting with ₹1,00,000
-                                                            for a one-year term. Our experts will handle trading to
-                                                            ensure profitable outcomes. You will earn 50% of the profits
+                                                        <p class="xb-item--content"> Invest by starting with ₹1,000
+                                                            for a three-year term. Our experts will handle trading to
+                                                            ensure profitable outcomes. You will earn 60% of the profits
                                                             from every successful trade. </p>
                                                     </div>
                                                     <div class="xb-item--img">
