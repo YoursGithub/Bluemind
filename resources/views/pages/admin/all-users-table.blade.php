@@ -75,7 +75,7 @@
                                             <th>Sharing Referral Code</th>
 
                                             <th>Start date</th>
-                                            <th>Edit</th>
+                                            {{-- <th>Edit</th> --}}
 
                                             <th>Delete</th>
 
@@ -123,11 +123,11 @@
                                                 @endisset
 
 
-                                                <td style="width: 100px">
+                                                {{-- <td style="width: 100px">
                                                     <a class="btn btn-outline-secondary btn-sm edit" title="Edit">
                                                         <i class="fas fa-pencil-alt"></i>
                                                     </a>
-                                                </td>
+                                                </td> --}}
 
                                                  <td>
                                                     <a href="{{ route('admin.delete-model',['model'=>'User', 'id'=>$user['id']]) }}"

@@ -27,8 +27,6 @@
     @yield('head-section')
 
     <style>
-   
-
         .toast-container {
             position: fixed;
             top: 20px;
@@ -136,8 +134,8 @@
                     <div class="dropdown d-inline-block">
                         <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
- <img class="rounded-circle header-profile-user"
-                                src="../assets/img/userpfp.jpg"
+                            <img class="rounded-circle header-profile-user"
+                                src="{{ Auth::user()?->profile_image ?? '/assets/img/userpfp.jpg' }}"
                                 alt="Header Avatar">
 
                             <span class="d-none d-xl-inline-block ms-1" key="t-henry">{{ Auth::user()->email }}</span>
@@ -283,7 +281,6 @@
                                         <span key="t-dashboards">Terms & Conditions </span>
                                     </a>
                                 </li>
-
                             @else
                                 <li>
                                     <a href="{{ route('user.dashboard') }}">
@@ -334,7 +331,6 @@
                                         <span key="t-dashboards">Profile </span>
                                     </a>
                                 </li>
-
                             @endif
 
 
