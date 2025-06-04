@@ -104,7 +104,7 @@
                     font-size: 1.5em;
                     margin-bottom: 15px;
                     text-align: left;
-                    color: #02ACF0;
+                    /* color: #02ACF0; */
                 }
 
                 .investment-section h2 {

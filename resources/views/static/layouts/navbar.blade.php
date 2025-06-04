@@ -1,3 +1,12 @@
+<style>
+    h1,h2,h3,h4,h5,h6{
+        color: #02ACF0 !important ;
+    }
+    .cs-wt{
+        color: white !important ;
+
+    }
+</style>
 <header id="xb-header-area" class="header-area">
     <div class="xb-header stricky">
         <div class="container">

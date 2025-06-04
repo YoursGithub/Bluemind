@@ -44,7 +44,7 @@
 
                     $properties = [
                         'payment_id',
-                        'user' => ['name'],
+                        'username' , // error if ['user'] => 'name' since same key passed
                         'user' => ['email'],
                         'amount',
                         'currency',

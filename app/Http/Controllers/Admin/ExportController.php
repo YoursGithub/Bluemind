@@ -14,7 +14,7 @@ class ExportController extends Controller
 
         $data = json_decode($request->input('data'), true);
 
-        // dd($data);
+        // dump($data);
 
 
         $headings = json_decode($request->input('headings'), true);
@@ -40,6 +40,10 @@ class ExportController extends Controller
                         }
                     }
                     return $nestedValue;
+                }
+                
+                if ($prop == "username") {
+                    return $row['user']['name'];
                 }
 
                 if ($prop == "leverage") {

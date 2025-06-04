@@ -54,7 +54,7 @@
         <!-- main area start -->
         <section id="roadmap" class="roadmap pt-135">
             <div class="section-title pb-50">
-                <h1 class="title">About Blue Mind Global</h1>
+                <h1 class="title">About </h1>
                 <img src="{{ $globalData->about?->image }}" class="mt-30" alt="founder">
                 <h1 class="sub-heading">Mr Santhosh M </br>Founder & CEO</h1>
             </div>

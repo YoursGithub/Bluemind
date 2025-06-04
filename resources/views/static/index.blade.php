@@ -613,7 +613,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="about-wrap pt-140 wow fadeInLeft" data-wow-duration=".7s">
-                                <h2 class="xb-item--title">What is BLUEMIND GLOBAL PVT. LTD.?</h2>
+                                <h2 class="xb-item--title">What is BLUEMIND GLOBAL PVT. LTD.</h2>
                                 <p class="xb-item--content">
                                     Welcome to BLUEMIND GLOBAL, where innovation meets opportunity in the dynamic world
                                     of cryptocurrency investments. Founded in 2019, we are a pioneering firm dedicated
@@ -950,7 +950,7 @@
                         </div>
                         <div class="container">
                             <div class="section-title pb-55 text-center">
-                                <h1 class="title">The best crypto based Trading investment platform & we operate in stages
+                                <h1 class="title">This is the best crypto based Trading investment platform & we operate in stages
                                 </h1>
                             </div>
                             <div class="row align-items-start">
@@ -982,7 +982,7 @@
                                                         <p class="xb-item--content"> Invest by starting with ₹1,000
                                                             for a three-year term. Our experts will handle trading to
                                                             ensure profitable outcomes. You will earn 60% of the profits
-                                                            from every successful trade. </p>
+                                                            from every successful trade terms and conditions apply. </p>
                                                     </div>
                                                     <div class="xb-item--img">
                                                         <img src="/assets/img/feature/time.png" alt="">

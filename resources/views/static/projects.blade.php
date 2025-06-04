@@ -292,7 +292,7 @@
     <div class="container">
         <center>
         <h1 style="margin-top: 40px;">Project's Section</h1>
-        <h1> COMING SOON...</h1>
+        <p style="font-size:x-large"> COMING SOON...</p>
         </center>
         <div class="gallery-grid">
 
