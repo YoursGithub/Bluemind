@@ -20,7 +20,7 @@
                     <div class="col-12">
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
                             <h4 class="mb-sm-0 font-size-18">Users</h4>
-                         </div>
+                        </div>
                     </div>
 
                     <div class="col-12" style="margin-bottom: 40px;">
@@ -37,9 +37,14 @@
 
                 @php
 
-                    $headings = ['Email'  , 'Login Referral' , 'Sharing Refrral' , 'Referred By'];
+                    $headings = ['Email', 'Login Referral', 'Sharing Refrral', 'Referred By'];
 
-                    $properties = [ 'email', 'parent_referral' => ['code'] , 'sharing_referral' => ['code'] , 'parent_user' => ['name']  ];
+                    $properties = [
+                        'email',
+                        'parent_referral' => ['code'],
+                        'sharing_referral' => ['code'],
+                        'parent_user' => ['name'],
+                    ];
 
                 @endphp
 
@@ -96,7 +101,8 @@
                                                     <td>{{ $user['parent_referral']['code'] }}</td>
                                                 @else
                                                     <td>
-                                                        <a href="{{ route('admin.generate-referral', ['user' => $user['id']]) }}">
+                                                        <a
+                                                            href="{{ route('admin.generate-referral', ['user' => $user['id']]) }}">
                                                             <button type="button"
                                                                 class="btn btn-success waves-effect waves-light">Generate
                                                                 Referral</button></a>
@@ -115,7 +121,8 @@
                                                     </td>
                                                 @else
                                                     <td>
-                                                        <a href="{{ route('admin.user-email-verify', ['user' => $user['id']]) }}">
+                                                        <a
+                                                            href="{{ route('admin.user-email-verify', ['user' => $user['id']]) }}">
                                                             <button type="button"
                                                                 class="btn btn-success waves-effect waves-light">Verify
                                                                 Email</button></a>
@@ -129,12 +136,22 @@
                                                     </a>
                                                 </td> --}}
 
-                                                 <td>
-                                                    <a href="{{ route('admin.delete-model',['model'=>'User', 'id'=>$user['id']]) }}"
-                                                        class="btn btn-outline-danger btn-sm delete" title="Delete">
+                                                <td>
+
+
+                                                    @php
+                                                        $delUrl = route('admin.delete-model', [
+                                                            'model' => 'User',
+                                                            'id' => $user['id'],
+                                                        ]);
+                                                    @endphp
+
+                                                    <button type="submit" onclick="showDeleteModal('{{ $delUrl }}')"
+                                                        class="btn btn-danger waves-effect waves-light">
                                                         <i class="fas fa-trash-alt"></i>
-                                                    </a>
-                                                   
+
+                                                    </button>
+
                                                 </td>
 
                                             </tr>

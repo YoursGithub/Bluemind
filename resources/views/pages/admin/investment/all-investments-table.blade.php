@@ -44,7 +44,7 @@
 
                     $properties = [
                         'payment_id',
-                        'username' , // error if ['user'] => 'name' since same key passed
+                        'username', // error if ['user'] => 'name' since same key passed
                         'user' => ['email'],
                         'amount',
                         'currency',
@@ -123,10 +123,20 @@
                                                 </td>
 
                                                 <td>
-                                                    <a href="{{ route('admin.delete-model', ['model' => 'Investment', 'id' => $inv['id']]) }}"
-                                                        class="btn btn-outline-danger btn-sm delete" title="Delete">
+
+
+                                                    @php
+                                                        $delUrl = route('admin.delete-model', [
+                                                            'model' => 'Investment',
+                                                            'id' => $inv['id'],
+                                                        ]);
+                                                    @endphp
+
+                                                    <button type="submit" onclick="showDeleteModal('{{ $delUrl }}')"
+                                                        class="btn btn-danger waves-effect waves-light">
                                                         <i class="fas fa-trash-alt"></i>
-                                                    </a>
+
+                                                    </button>
 
                                                 </td>
 

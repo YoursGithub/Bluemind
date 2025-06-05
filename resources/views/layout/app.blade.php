@@ -456,7 +456,6 @@
 
         function confirmDelete() {
             console.log("Deleting item with ID:", deleteId);
-            // Add delete logic here (API call, etc.)
 
             window.location.href=deleteId;
 

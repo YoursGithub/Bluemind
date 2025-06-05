@@ -86,7 +86,8 @@
                                             <th>Leverage</th>
                                             <th style="color: #34c38f">Profit</th>
                                             <th>Investment Date</th>
-                                            <th>Action</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
 
                                         </tr>
                                     </thead>
@@ -114,6 +115,23 @@
                                                         class="btn btn-outline-secondary btn-sm edit" title="Edit">
                                                         <i class="fas fa-pencil-alt"></i>
                                                     </a>
+                                                </td>
+
+                                                <td>
+
+                                                    @php
+                                                        $delUrl = route('admin.delete-model', [
+                                                            'model' => 'Transaction',
+                                                            'id' => $inv['id'],
+                                                        ]);
+                                                    @endphp
+
+                                                    <button type="submit" onclick="showDeleteModal('{{ $delUrl }}')"
+                                                        class="btn btn-danger waves-effect waves-light">
+                                                        <i class="fas fa-trash-alt"></i>
+
+                                                    </button>
+
                                                 </td>
 
 
