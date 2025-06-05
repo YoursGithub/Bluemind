@@ -55,8 +55,8 @@
                                                 required>
                                                 <option value="" disabled selected>Please select a direction</option>
 
-                                                <option value="Buy Long">Profit</option>
-                                                <option value="Close Long">Loss</option>
+                                                <option value="Profit">Profit</option>
+                                                <option value="Loss">Loss</option>
 
 
                                             </select>

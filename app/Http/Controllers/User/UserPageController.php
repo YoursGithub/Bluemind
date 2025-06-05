@@ -48,9 +48,9 @@ class UserPageController extends Controller
         return $transactions->groupBy('investment_id')->map(function ($group) {
             $firstTransaction = $group->first();
 
-            $hasCloseLong = $group->contains('direction', 'Close Long');
+            $hasCloseLong = $group->contains('direction', 'Loss');
 
-            // Calculate total profit only if 'Close Long' exists; otherwise, set profit to 0
+            // Calculate total profit only if 'Loss' exists; otherwise, set profit to 0
             $totalProfit = $hasCloseLong ? $group->sum('profit') : 0;
 
 

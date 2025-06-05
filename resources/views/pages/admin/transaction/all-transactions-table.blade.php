@@ -102,7 +102,7 @@
 
                                                 <td>{{ $inv->trading }}</td>
                                                 <td class=""
-                                                    style="color : {{ $inv->direction === 'Close Long' ? 'red' : 'rgb(52, 195, 143)' }}">
+                                                    style="color : {{ $inv->direction === 'Loss' ? 'red' : 'rgb(52, 195, 143)' }}">
                                                     {{ $inv->direction }}
                                                 </td>
                                                 <td>Cross {{ $inv->leverage }}X</td>

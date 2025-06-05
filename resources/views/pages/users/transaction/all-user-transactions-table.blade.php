@@ -63,7 +63,7 @@
                                     <td>{{ $loop->iteration }}</td>
 
                                     <td>{{ $inv->trading }}</td>
-                                    <td class="" style="color : {{ $inv->direction === 'Close Long' ? 'red' : 'rgb(52, 195, 143)' }}">
+                                    <td class="" style="color : {{ $inv->direction === 'Loss' ? 'red' : 'rgb(52, 195, 143)' }}">
                                         {{ $inv->direction }}
                                     </td>
                                     

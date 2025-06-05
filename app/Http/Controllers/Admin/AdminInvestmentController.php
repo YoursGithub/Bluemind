@@ -189,7 +189,7 @@ class AdminInvestmentController extends Controller
 
         $users = User::whereNot('is_admin',1)->count();
 
-        $profit=Transaction::where('direction','Close Long')->sum('profit');
+        $profit=Transaction::where('direction','Loss')->sum('profit');
 
 
         return view('pages.admin.dashboard',compact('investments','users','profit'));
