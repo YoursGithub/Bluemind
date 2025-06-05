@@ -92,7 +92,7 @@ Route::prefix('admin')->as('admin.')->middleware('isAdmin')->group(function () {
         Route::get('/update-gallery/{id}', 'updateGalleryView')->name('update-gallery');
         Route::post('/update-gallery/{id}', 'updateGallery')->name('update-gallery');
 
-        Route::post('/delete-gallery/{id}', 'deleteGallery')->name('delete-gallery');
+        Route::get('/delete-gallery/{id}', 'deleteGallery')->name('delete-gallery');
     });
 
     Route::controller(TermsController::class)->group(function () {
@@ -104,7 +104,7 @@ Route::prefix('admin')->as('admin.')->middleware('isAdmin')->group(function () {
         Route::get('/update-terms/{id}', 'updateTermsView')->name('update-terms');
         Route::post('/update-terms/{id}', 'updateTerms')->name('update-terms');
 
-        Route::post('/delete-terms/{id}', 'deleteTerms')->name('delete-terms');
+        Route::get('/delete-terms/{id}', 'deleteTerms')->name('delete-terms');
     });
 
 
@@ -134,7 +134,7 @@ Route::prefix('admin')->as('admin.')->middleware('isAdmin')->group(function () {
         Route::get('/create-branch', 'singleBranchView')->name('create-branch');
         Route::post('/create-branch', 'singleBranchCreate')->name('create-branch');
 
-        Route::post('/delete-branch/{id}', 'singleBranchDelete')->name('delete-branch');
+        Route::get('/delete-branch/{id}', 'singleBranchDelete')->name('delete-branch');
     });
 
 
@@ -145,7 +145,7 @@ Route::prefix('admin')->as('admin.')->middleware('isAdmin')->group(function () {
         Route::get('/create-team-member', 'singleTeamView')->name('create-team');
         Route::post('/create-team-member', 'singleTeamCreate')->name('create-team');
 
-        Route::post('/delete-team-member/{id}', 'singleTeamDelete')->name('delete-team');
+        Route::get('/delete-team-member/{id}', 'singleTeamDelete')->name('delete-team');
     });
 
 

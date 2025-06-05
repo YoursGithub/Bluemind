@@ -79,12 +79,13 @@
 
 
                                                 <td>
-                                                    <form action="{{ route('admin.delete-branch', ['id' => $data['id']]) }}"
-                                                        method="POST">
-                                                        @csrf
-                                                        <button type="submit"
-                                                            class="btn btn-danger waves-effect waves-light">Delete</button>
-                                                    </form>
+
+                                                    @php
+                                                        $delUrl = route('admin.delete-branch', ['id' => $data['id']]);
+                                                    @endphp
+
+                                                    <button type="submit" onclick="showDeleteModal('{{ $delUrl }}')"
+                                                        class="btn btn-danger waves-effect waves-light">Delete</button>
                                                 </td>
 
 

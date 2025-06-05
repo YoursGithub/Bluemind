@@ -367,6 +367,27 @@
         @yield('main-section')
 
 
+        <!-- Delete Modal -->
+        <div class="modal fade" id="deleteModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Confirm Deletion</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you want to delete this item?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-danger" onclick="confirmDelete()">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
 
         <!-- end main content-->
 
@@ -386,6 +407,7 @@
 
     @yield('script-section')
 
+    {{-- Script for success and fail message  --}}
     <script>
         window.onload = function() {
             @if (session('success'))
@@ -417,6 +439,30 @@
                 toast.style.animation = "fadeOut 0.3s ease forwards";
                 setTimeout(() => toast.remove(), 300);
             }, 3000);
+        }
+    </script>
+
+
+    {{-- script for delete modal --}}
+    <script>
+        let deleteId = null;
+
+        function showDeleteModal(id) {
+            deleteId = id;
+            const deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
+            deleteModal.show();
+        }
+
+
+        function confirmDelete() {
+            console.log("Deleting item with ID:", deleteId);
+            // Add delete logic here (API call, etc.)
+
+            window.location.href=deleteId;
+
+            const modalEl = document.getElementById('deleteModal');
+            const modal = bootstrap.Modal.getInstance(modalEl);
+            modal.hide();
         }
     </script>
 
