@@ -119,7 +119,7 @@
 <div class="text-field">
     <label for="confirm-password">Confirm Password</label>
     <div class="password-wrapper">
-        <input id="signupConfirmPassword" type="password" name="confirm-password" placeholder="Confirm your password" required>
+        <input id="signupConfirmPassword" type="password" name="password_confirmation" placeholder="Confirm your password" required>
         <span class="toggle-eye" onclick="toggleVisibility('signupConfirmPassword', 'eye2')">
             <i id="eye2" class="fa-solid fa-eye"></i>
         </span>
