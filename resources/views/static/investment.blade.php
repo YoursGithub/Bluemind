@@ -25,6 +25,16 @@
     <link id="themeStylesheet" rel="stylesheet" type="text/css" href="/assets/css/main.css">
 </head>
 
+<style>
+    .center-div {
+        text-align: center;
+    }
+
+    .li-font {
+        font-size: 1.3em !important;
+    }
+</style>
+
 <body>
     <!-- backtotop - start -->
     <div class="xb-backtotop">
@@ -54,7 +64,7 @@
             <div class="section-title pb-50 text-center">
                 <h1 class="title">Investment Policies</h1>
                 <img src="/assets/img/bg/INVESTMENT.jpg" alt="Blue Mind Global" class="intro-image mt-40"
-                     style="width: 100%; max-width: 600px; height: auto; padding-left: 15px; padding-right: 15px;">
+                    style="width: 100%; max-width: 600px; height: auto; padding-left: 15px; padding-right: 15px;">
             </div>
 
             <div class="investment-section">
@@ -65,16 +75,53 @@
                     risks.</p>
                 <p>Unlock the potential of cryptocurrency trading with our exclusive investment offer. Here's what we
                     provide:</p>
+                <br>
+
                 <h3 class="subtitle">How It Works</h3>
                 <ul class="subtitle2">
                     <li><strong>Invest:</strong> Start with ₹1,000 for a three-year term.</li>
                     <li><strong>Trade:</strong> Our experts handle trading to ensure profitable outcomes.</li>
-                    <li><strong>Earn:</strong> Receive 60% of the profits from every successful trade , terms and condition applied.</li>
+                    <li><strong>Earn:</strong> Receive 60% of the profits from every successful trade , terms and
+                        condition applied.</li>
                 </ul>
+                <br>
+
                 <h3 class="subtitle">Projected Earnings</h3>
                 <p>With our expertise and market strategies, a ₹1,00,000 investment could potentially yield significant
                     returns. For instance, if we achieve a 100% profit per trade, your share would be 60%, equating to
                     ₹60,000 per trade , terms and condition applied.</p>
+                <br>
+
+                <h3 class="subtitle">
+                    One-Time Investment Plan
+                    3-Year Lock-in
+
+                </h3>
+                <p>
+                    1. Investor makes a one-time payment (e.g., INR 1,00,000).
+                    2. Funds are locked-in for 36 months (3 years).
+                    3. LLP utilizes the capital for trading and ventures.
+                    4. At term-end, investor receives INR 2,00,000 - 100% ROI. (T&C Apply)
+                </p>
+
+
+                <br>
+
+                <h3 class="subtitle">
+                    SIP Plan
+                </h3>
+
+                <p>
+                    Guaranteed Annual Yield: Up to 20%
+                    , If returns exceed 20%, the plan shifts to a profit-sharing
+                    model:
+                    , 60% of excess returns go to the investor
+                    , 40% goes to BLUEMIND Global as a performance fee
+                    , Ensures stable returns with upside sharing. T&C apply
+                </p>
+
+
+
             </div>
             <style>
                 .intro-image {

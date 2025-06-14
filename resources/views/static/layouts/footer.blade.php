@@ -94,14 +94,25 @@
                 </div>
 
 
+                {{-- <div class="col-lg-5 mt-30 pc-only">
+                    <div class="testimonial-wrap bg_img" data-background="assets/img/bg/tm_bg.png"
+                        style="display: flex ; justify-content:center; align-items:center">
+                        <img src="/assets/img/logo-change.png" alt="" width="200px">
+                    </div>
+                </div> --}}
+
                 <div class="col-lg-5 mt-30 pc-only">
-                    <div class="testimonial-wrap bg_img" data-background="assets/img/bg/tm_bg.png" style="display: flex ; justify-content:center; align-items:center">
-                        {{-- <div class="xb-item--img mt-145"> --}}
-                            {{-- <img src="/assets/img/logo/Logo_new1.png" alt=""> --}}
-                            <img src="/assets/img/logo-change.png" alt="" width="200px">
-                        {{-- </div> --}}
+                    <div class="testimonial-wrap bg_img" data-background="assets/img/bg/tm_bg.png"
+                        style="display: flex; justify-content: center; align-items: center; ">
+
+                        <div style="width: 200px; height: 200px; border-radius: 50%; overflow: hidden;">
+                            <img src="/assets/img/logo-change.png" alt=""
+                                style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+
                     </div>
                 </div>
+
 
                 <style>
                     /* Hide the section on screens smaller than 992px (tablet and mobile devices) */
@@ -124,8 +135,7 @@
                         <li><a href="/about">Information</a></li>
                         <li><a href="/contact">Contact Us</a></li>
                         <li><a href="/roadmap">Our Roadmap</a></li>
-                        <li><a target="_blank"
-                                href="/terms">Terms
+                        <li><a target="_blank" href="/terms">Terms
                                 & Conditions</a>
                         </li>
                     </ul>
@@ -173,11 +183,13 @@
                         @endif
 
                         @if ($linkedin)
-                            <li><a target="_blank" href="{{ $linkedin }}"><i class="fab fa-linkedin"></i></a></li>
+                            <li><a target="_blank" href="{{ $linkedin }}"><i class="fab fa-linkedin"></i></a>
+                            </li>
                         @endif
 
                         @if ($instagram)
-                            <li><a target="_blank" href="{{ $instagram }}"><i class="fab fa-instagram"></i></a></li>
+                            <li><a target="_blank" href="{{ $instagram }}"><i class="fab fa-instagram"></i></a>
+                            </li>
                         @endif
                     </ul>
 

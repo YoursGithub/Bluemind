@@ -44,9 +44,9 @@
                                 <div class="dropdown-content">
                                     <a class="dropdown-link" target="_blank" href="{{ $globalData->download?->business_proposal }}">Business
                                         Proposal</a>
-                                    <a class="dropdown-link" target="_blank" href="{{ $globalData->download?->referral_plan }}">Referral
+                                    <a class="dropdown-link" target="_blank" href="{{ $globalData->download?->referral_plan }}">SIP
                                         Plan</a>
-                                    <a class="dropdown-link" target="_blank" href="{{ $globalData->download?->trading_investment }}">Legal Documents</a>
+                                    <a class="dropdown-link" target="_blank" href="{{ $globalData->download?->trading_investment }}">One Time Investment Plan</a>
                                     
                                 </div>
                             </li>
