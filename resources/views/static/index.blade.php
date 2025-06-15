@@ -136,7 +136,7 @@
                 <div class="cards">
                     <div class="card">
                         <img src="/assets/img/shape/1.svg" alt="">
-                        <p class="card-title">Referal Bonus</p>
+                        <p class="card-title">Referal Bonus  10% Lifetime</p>
                         <a href="/register" class="btn-primary">Sign Up For Reward</a>
                     </div>
                     <div class="card">

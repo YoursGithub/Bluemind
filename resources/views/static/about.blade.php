@@ -50,7 +50,7 @@
         <!-- header start -->
         @include('static.layouts.navbar')
         <!-- header end -->
-        
+
         <!-- main area start -->
         <section id="roadmap" class="roadmap pt-135">
             <div class="section-title pb-50">
@@ -69,7 +69,8 @@
                 </div>
                 <div class="intro-text">
                     <h2 class="sub-heading">Understanding the Market</h2>
-                    <p>At BLUEMIND GLOBAL PVT. LTD., we understand that the cryptocurrency market is not just a trend but a
+                    <p>At BLUEMIND GLOBAL PVT. LTD., we understand that the cryptocurrency market is not just a trend
+                        but a
                         transformative force reshaping global finance. With deep expertise in blockchain technology and
                         a
                         proven track record in investment management, our team navigates this complex landscape with
@@ -128,6 +129,32 @@
                         journey
                         begins.</p>
                 </div>
+
+
+                <div class="intro-text">
+                    <h2 class="sub-heading">Referral Bonus</h2>
+                    <p>
+                        Any individual who successfully refers a candidate, client, or business partner to the
+                        organization shall be entitled to a 10% referral bonus,
+                        calculated on the eligible transaction or revenue generated through the referral, subject to
+                        verification and compliance with company policies.
+                    </p>
+                </div>
+
+                <div class="intro-text">
+                    <h2 class="sub-heading"> Nominee Clause</h2>
+
+                    <p>
+
+                        In the event of the referrer’s demise, any unpaid or future eligible referral bonuses shall be
+                        transferred to the nominated beneficiary as designated by the referrer in official company
+                        records. If no nominee has been designated,
+                        such amounts may be settled as per applicable legal succession protocols.
+                    </p>
+                </div>
+
+
+
             </div>
             <style>
                 body {
