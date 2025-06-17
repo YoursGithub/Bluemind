@@ -12,7 +12,7 @@
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script>
     <script src="/assets/js/firebase.js" type="module"></script>
-    <link rel="shortcut icon" href="/assets/img/favicon.png" type="images/x-icon" />
+    <link rel="shortcut icon" href="/assets/img/logo-change.png" type="images/x-icon" />
     <!-- css include -->
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/fontawesome.css">

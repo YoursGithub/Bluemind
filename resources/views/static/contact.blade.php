@@ -12,7 +12,7 @@
 
     <title>Contact Us</title>
 
-    <link rel="shortcut icon" href="/assets/img/favicon.png" type="images/x-icon" />
+    <link rel="shortcut icon" href="/assets/img/logo-change.png" type="images/x-icon" />
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <!-- css include -->
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
